@@ -1,0 +1,3439 @@
+@charset "UTF-8";
+/* reset
+================================================== */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Setting */
+html {
+  height: auto;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+*:active, *:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+}
+
+picture {
+  text-align: center;
+}
+
+/************************************************
+	Setting
+************************************************ */
+* {
+  transition: opacity 0.2s ease-out, color 0.1s ease-out, background-color 0.2s ease-out, border-radius 0.2s ease-out, box-shadow 0.2s ease-out, text-shadow 0.2s ease-out, transform 0.2s ease-out;
+  -webkit-transition: opacity 0.2s ease-out, color 0.1s ease-out, background-color 0.2s ease-out, border-radius 0.2s ease-out, box-shadow 0.2s ease-out, text-shadow 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  color: #000;
+  font-size: 100%;
+  font-family: "游ゴシック" , "Yu Gothic" , YuGothic, Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto ,"Shingo" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  letter-spacing: 0.05em;
+  background: #fff;
+  line-height: 1.8;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* link */
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  /*text-decoration: underline;*/
+}
+
+a img {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* clear */
+.cf {
+  zoom: 1;
+}
+
+.cf, .cf:before {
+  content: '';
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+.sp {
+  display: none !important;
+}
+
+/* 画面外にいる状態 */
+.fadein {
+  opacity: 0.1;
+  -moz-transform: translate(0, 50px);
+  -ms-transform: translate(0, 50px);
+  -webkit-transform: translate(0, 50px);
+  transform: translate(0, 50px);
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.fadeinLeft {
+  opacity: 0.1;
+  -moz-transform: translate(-50px, 0);
+  -ms-transform: translate(-50px, 0);
+  -webkit-transform: translate(-50px, 0);
+  transform: translate(-50px, 0);
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.fadeinRight {
+  opacity: 0.1;
+  -moz-transform: translate(50px, 0);
+  -ms-transform: translate(50px, 0);
+  -webkit-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* 2つ目の要素に200msのdelayをかける */
+#topMember .inner ul .fadein:nth-of-type(2),
+#topMember .inner ul .fadein:nth-of-type(5) {
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+/* 3つ目の要素に400msのdelayをかける */
+#topMember .inner ul .fadein:nth-of-type(3),
+#topMember .inner ul .fadein:nth-of-type(6) {
+  -moz-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+/* 画面内に入った状態 */
+.fadein.scrollin,
+.fadeinLeft.scrollin,
+.fadeinRight.scrollin {
+  opacity: 1;
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  pointer-events: auto;
+}
+
+/************************************************
+	汎用
+************************************************ */
+.tar {
+  text-align: right;
+}
+
+.btn01 {
+  width: 180px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #000;
+}
+
+.btn01:before,
+.btn01:after {
+  content: '';
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.btn01:before {
+  left: 50%;
+}
+
+.btn01:after {
+  right: 50%;
+}
+
+.btn01:before,
+.btn01:after {
+  background: #000;
+}
+
+.btn01 .blank {
+  background: url(../images/ico_window01.png) no-repeat;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.btn01:hover {
+  color: #fff;
+}
+
+.btn01:hover:before,
+.btn01:hover:after {
+  width: 50%;
+  opacity: 1;
+}
+
+.btn01:hover .blank {
+  background: url(../images/ico_window02.png) no-repeat;
+}
+
+.btn02 {
+  width: 180px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn02:before,
+.btn02:after {
+  content: '';
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.btn02:before {
+  left: 50%;
+}
+
+.btn02:after {
+  right: 50%;
+}
+
+.btn02:before,
+.btn02:after {
+  background: #fff;
+}
+
+.btn02 .blank {
+  background: url(../images/ico_window02.png) no-repeat;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.btn02:hover {
+  color: #000;
+}
+
+.btn02:hover:before,
+.btn02:hover:after {
+  width: 50%;
+  opacity: 1;
+}
+
+.btn02:hover .blank {
+  background: url(../images/ico_window01.png) no-repeat;
+}
+
+.animate, .btn01:before,
+.btn01:after, .btn02:before,
+.btn02:after, #instagram .btn01:before,
+#instagram .btn01:after {
+  transition: all 0.3s;
+}
+
+.bx-wrapper * {
+  transition: none !important;
+}
+
+.SPLink {
+  cursor: default;
+}
+
+/************************************************
+	header
+************************************************ */
+#header {
+  min-width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#header .logo {
+  text-align: center;
+  padding-top: 40px;
+  margin-bottom: 30px;
+}
+
+#header #gnav ul {
+  display: table;
+  margin: 0 auto;
+}
+
+#header #gnav ul > li {
+  display: table-cell;
+  padding: 0 25px;
+}
+
+#header #gnav ul > li a:hover {
+  opacity: 0.8;
+}
+
+#header #link {
+  display: table;
+  position: absolute;
+  top: 50px;
+  right: 25px;
+}
+
+#header #link #snsLink {
+  display: inline-block;
+}
+
+#header #link #snsLink li {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 5px;
+  line-height: 1;
+}
+
+#header #link #snsLink li a:hover {
+  opacity: 0.8;
+}
+
+#header #link #lang {
+  display: inline-block;
+}
+
+#header #link #lang li {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+  line-height: 1;
+}
+
+#header #link #lang li:nth-child(2) {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+
+#header #link #lang li a {
+  color: #fff;
+}
+
+#header #link #lang li a:hover {
+  opacity: 0.8;
+}
+
+#header .arrow {
+  width: 60px;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  margin-left: -30px;
+  z-index: 999;
+}
+
+#header .arrow a {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+.home #header {
+  background: url(../images/mvTop.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.home #header .imgClm01 {
+  position: absolute;
+  top: 40vh;
+  left: 15vw;
+}
+
+.home #header .imgClm02 {
+  position: absolute;
+  bottom: 25vh;
+  right: 15vw;
+}
+
+.stay #header,
+.stay02 #header,
+.restaurant #header,
+.access #header {
+  background: url(../images/mvStay.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.stay #header #tit,
+.stay02 #header #tit,
+.restaurant #header #tit,
+.access #header #tit {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.stay #header .reserve,
+.stay02 #header .reserve,
+.restaurant #header .reserve,
+.access #header .reserve {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stay #header .reserve p,
+.stay02 #header .reserve p,
+.restaurant #header .reserve p,
+.access #header .reserve p {
+  text-align: right;
+}
+
+.stay #header .reserve p a:hover,
+.stay02 #header .reserve p a:hover,
+.restaurant #header .reserve p a:hover,
+.access #header .reserve p a:hover {
+  opacity: 0.8;
+}
+
+.stay02 #header {
+  background: url(../images/mvStay02.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.restaurant #header {
+  background: url(../images/mvRestaurant.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+.access #header {
+  background: url(../images/mvAccess.jpg) no-repeat center top;
+  background-size: cover;
+}
+
+/************************************************
+	共通&footer
+************************************************ */
+#instagram {
+  padding: 120px 0;
+}
+
+#instagram h2 {
+  font-size: 2.285rem;
+  text-align: center;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+#instagram .inner {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+#instagram .btn01 {
+  width: 180px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #000;
+  margin-top: 20px;
+}
+
+#instagram .btn01:before,
+#instagram .btn01:after {
+  content: '';
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+#instagram .btn01:before {
+  left: 50%;
+}
+
+#instagram .btn01:after {
+  right: 50%;
+}
+
+#instagram .btn01:before,
+#instagram .btn01:after {
+  background: #000;
+}
+
+#instagram .btn01 .blank {
+  background: url(../images/ico_window01.png) no-repeat;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+#instagram .btn01:hover {
+  color: #fff;
+}
+
+#instagram .btn01:hover:before,
+#instagram .btn01:hover:after {
+  width: 50%;
+  opacity: 1;
+}
+
+#instagram .btn01:hover .blank {
+  background: url(../images/ico_window02.png) no-repeat;
+}
+
+#googleMap {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 120px;
+}
+
+#footer #copy {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+#footer #goTop {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  transition: none;
+}
+
+/************************************************
+	toppage
+************************************************ */
+#container {
+  padding: 70px 0;
+}
+
+.home {
+  min-width: 1200px;
+}
+
+.home .spSlides {
+  display: none;
+}
+
+.home .container {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.home .catch {
+  font-size: 2.285rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.home .catch:after {
+  content: "――";
+  letter-spacing: -0.3em;
+}
+
+.home #topSec01, .home #topSec02 {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.home #topSec01 .txtBox, .home #topSec02 .txtBox {
+  width: 490px;
+}
+
+.home #topSec01 .imgBox, .home #topSec02 .imgBox {
+  width: 50%;
+  overflow: hidden;
+}
+
+.home #topSec01 .imgBox img, .home #topSec02 .imgBox img {
+  width: 100%;
+}
+
+.home #topSec01 .txtBox h2, .home #topSec02 .txtBox h2 {
+  font-size: 2.857rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.home #topSec01 .txtBox h2 span, .home #topSec02 .txtBox h2 span {
+  font-size: 1.143rem;
+  display: block;
+}
+
+.home #topSec01 .txtBox p, .home #topSec02 .txtBox p {
+  font-weight: bold;
+}
+
+.home #topSec01 {
+  justify-content: flex-end;
+}
+
+.home #topSec01 .txtBox {
+  padding-right: 40px;
+}
+
+.home #topSec02 {
+  margin-bottom: 40px;
+}
+
+.home #topSec02 .txtBox {
+  padding-left: 50px;
+}
+
+.home #topSec03 {
+  max-width: 950px;
+  margin: 0 auto;
+  height: 490px;
+  background: url(../images/img_top003.jpg) no-repeat center center;
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.home #topSec03 .txtBox {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  width: 630px;
+  padding: 30px;
+}
+
+.home #topSec03 .txtBox h2 {
+  font-size: 2.143rem;
+}
+
+#topStay, #topPhoto, #topMice {
+  position: relative;
+  margin-bottom: 40px;
+  overflow-x: hidden;
+}
+
+#topStay a, #topPhoto a, #topMice a {
+  display: flex;
+}
+
+#topStay .txtBox, #topPhoto .txtBox, #topMice .txtBox {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  min-height: 480px;
+  margin-left: calc(100% / 2 - 525px - 40px);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+#topStay .txtBox h2, #topPhoto .txtBox h2, #topMice .txtBox h2 {
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: auto;
+  font-size: 2.571rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+}
+
+#topStay .txtBox h2 span, #topPhoto .txtBox h2 span, #topMice .txtBox h2 span {
+  display: block;
+  padding-right: 5px;
+  font-size: 1.571rem;
+  letter-spacing: 0.15em;
+  text-align: right;
+}
+
+#topStay .txtBox h2:after, #topPhoto .txtBox h2:after, #topMice .txtBox h2:after {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  content: "";
+  width: calc(50vw - 525px - 40px + 100% + 40px);
+  min-width: calc(1200px - 525px - 40px + 100% + 40px);
+  height: 1px;
+  background: #000;
+  z-index: 20;
+}
+
+#topStay .txtBox h2 + p, #topPhoto .txtBox h2 + p, #topMice .txtBox h2 + p {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#topStay .txtBox h3, #topPhoto .txtBox h3, #topMice .txtBox h3 {
+  margin-bottom: 20px;
+  font-size: 1.714rem;
+  line-height: 1.5;
+}
+
+#topStay .txtBox h3 + p, #topPhoto .txtBox h3 + p, #topMice .txtBox h3 + p {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#topStay .txtBox .btn01, #topStay .txtBox .btn02, #topPhoto .txtBox .btn01, #topPhoto .txtBox .btn02, #topMice .txtBox .btn01, #topMice .txtBox .btn02 {
+  z-index: 10;
+}
+
+#topPhoto .txtBox h2 {
+  letter-spacing: 0;
+}
+
+#topPhoto .txtBox h2 span {
+  letter-spacing: 0.15em;
+}
+
+#topMice a {
+  justify-content: flex-end;
+}
+
+#topMice .txtBox {
+  margin-right: calc(100% / 2 - 525px - 40px);
+  margin-left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+#topMice .txtBox h2 {
+  display: block;
+  text-align: left;
+  font-size: 1.857rem;
+  line-height: 1.1;
+}
+
+#topMice .txtBox h2 span {
+  display: inline;
+  font-size: 3.214rem;
+  padding-right: 0;
+}
+
+#topMice .txtBox h2 span.i {
+  padding-left: 0.2em;
+}
+
+#topMice .txtBox h2:after {
+  display: none;
+}
+
+#topRestaurant, #topKaidan {
+  position: relative;
+  margin-bottom: 40px;
+  overflow-x: hidden;
+}
+
+#topRestaurant a, #topKaidan a {
+  display: flex;
+}
+
+#topRestaurant .imgBox, #topKaidan .imgBox {
+  width: 50%;
+}
+
+#topRestaurant .txtBox, #topKaidan .txtBox {
+  display: flex;
+  width: 50%;
+  min-width: 600px;
+  background: url(../images/bg001.png);
+  color: #fff;
+}
+
+#topRestaurant .txtBox .txtBoxInner, #topKaidan .txtBox .txtBoxInner {
+  display: flex;
+  flex-direction: column;
+  width: 525px;
+  padding: 40px 0 40px 40px;
+  min-height: 480px;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2, #topKaidan .txtBox .txtBoxInner h2 {
+  position: relative;
+  margin-bottom: auto;
+  font-size: 2.571rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.2;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2 span, #topKaidan .txtBox .txtBoxInner h2 span {
+  display: block;
+  padding-right: 5px;
+  font-size: 1.571rem;
+  letter-spacing: 0.15em;
+  text-align: right;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2:after, #topKaidan .txtBox .txtBoxInner h2:after {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: calc(100vw / 2 - 525px + 100%);
+  content: "";
+  height: 1px;
+  background: #fff;
+  z-index: 20;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2 + p, #topKaidan .txtBox .txtBoxInner h2 + p {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#topRestaurant .txtBox .txtBoxInner h3, #topKaidan .txtBox .txtBoxInner h3 {
+  margin-bottom: 20px;
+  font-size: 1.714rem;
+  line-height: 1.5;
+}
+
+#topRestaurant .txtBox .txtBoxInner h3 + p, #topKaidan .txtBox .txtBoxInner h3 + p {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#topRestaurant .txtBox .txtBoxInner .btn01, #topRestaurant .txtBox .txtBoxInner .btn02, #topKaidan .txtBox .txtBoxInner .btn01, #topKaidan .txtBox .txtBoxInner .btn02 {
+  z-index: 10;
+}
+
+#topRestaurant .txtBox {
+  background: -webkit-linear-gradient(left, transparent 0%, transparent 50%, black 100%), url(../images/bg001.png);
+  background: -o-linear-gradient(left, transparent 0%, transparent 50%, black 100%), url(../images/bg001.png);
+  background: linear-gradient(to right, transparent 0%, transparent 50%, black 100%), url(../images/bg001.png);
+}
+
+#topRestaurant .txtBox .txtBoxInner {
+  padding: 40px 0 40px 40px;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2 {
+  display: block;
+  width: 100%;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2 span {
+  text-align: right;
+}
+
+#topRestaurant .txtBox .txtBoxInner h2:after {
+  right: auto;
+  left: 0;
+}
+
+#topKaidan a {
+  flex-direction: row-reverse;
+}
+
+#topKaidan .txtBox {
+  flex-direction: row-reverse;
+  background: -webkit-linear-gradient(right, transparent 0%, transparent 50%, black 100%), url(../images/bg001.png);
+  background: -o-linear-gradient(right, transparent 0%, transparent 50%, black 100%), url(../images/bg001.png);
+  background: linear-gradient(to left, transparent 0%, transparent 50%, black 100%), url(../images/bg001.png);
+}
+
+#topKaidan .txtBox .txtBoxInner {
+  padding: 40px 40px 40px 0;
+}
+
+#topKaidan .txtBox .txtBoxInner h2 {
+  display: block;
+  width: 100%;
+  letter-spacing: 0.15em;
+}
+
+#topKaidan .txtBox .txtBoxInner h2 span {
+  text-align: right;
+}
+
+/************************************************
+	stay02
+************************************************ */
+.stay02 {
+  min-width: 1200px;
+}
+
+.stay02 #header .arrow {
+  bottom: 153px;
+}
+
+.stay02 .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.stay02 .catch {
+  font-size: 2.285rem;
+  line-height: 1.4375;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.stay02 .catch:after {
+  content: "――";
+  letter-spacing: -0.2em;
+}
+
+.stay02 .bx-wrapper {
+  margin-bottom: 0;
+}
+
+.stay02 .bx-wrapper .bx-viewport {
+  background: none;
+  box-shadow: none;
+  border: none;
+  left: 0;
+  overflow: hidden;
+}
+
+.stay02 .bx-pager a {
+  display: inline-block;
+  margin-right: 2px;
+  box-shadow: 0px 0px 0px 1px #9d9d9d;
+}
+
+.stay02 .bx-pager a.active {
+  box-shadow: 0px 0px 0px 2px #000;
+}
+
+.stay02 #staySec01 .imgBox img {
+  width: 100%;
+  height: auto;
+}
+
+.stay02 #staySec01 .txtBox {
+  padding: 60px 0;
+}
+
+.stay02 #staySec01 .txtBox h2 {
+  margin-bottom: 30px;
+  font-size: 2.857rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+
+.stay02 #staySec01 .txtBox h2 span {
+  display: block;
+  font-size: 1.143rem;
+  letter-spacing: 2px;
+}
+
+.stay02 #staySec01 .txtBox p {
+  margin-bottom: 1.8em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.stay02 #staySec01 .txtBox p:last-child {
+  margin-bottom: 0;
+}
+
+.stay02 #staySec02 #staySec02_01,
+.stay02 #staySec02 #staySec02_02,
+.stay02 #staySec02 #staySec02_03 {
+  margin: 0 0 50px;
+  padding: 40px 0;
+  background-image: url(../images/img_stay02_slide01_bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.stay02 #staySec02 #staySec02_02 {
+  background-image: url(../images/img_stay02_slide02_bg.jpg);
+}
+
+.stay02 #staySec02 #staySec02_03 {
+  margin-bottom: 0;
+  background-image: url(../images/img_stay02_slide03_bg.jpg);
+}
+
+.stay02 #staySec02 .container {
+  display: flex;
+  align-items: center;
+}
+
+.stay02 #staySec02 #staySec02_01 .container {
+  flex-direction: row-reverse;
+}
+
+.stay02 #staySec02 #staySec02_03 .container {
+  flex-direction: row-reverse;
+}
+
+.stay02 #staySec02 .imgBox {
+  width: calc(100% / 12 * 7);
+}
+
+.stay02 #staySec02 .txtBox {
+  width: calc(100% / 12 * 5);
+  padding: 0 30px 0 50px;
+  box-sizing: border-box;
+}
+
+.stay02 #staySec02 .txtBox .txtBoxInner {
+  color: #fff;
+}
+
+.stay02 #staySec02 .txtBox h2 {
+  position: relative;
+  margin: 0 0 35px -6px;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-size: 2.857rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -5px;
+  text-align: left;
+}
+
+.stay02 #staySec02 .txtBox h2 .letterSpace {
+  display: inline-block;
+  margin: 0 -6px 0 -6px;
+}
+
+.stay02 #staySec02 .txtBox h2 .subTit {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding-left: 6px;
+  font-size: 1.143rem;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+.stay02 #staySec02 .txtBox p {
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.stay02 #staySec02 #staySec02_01 .txtBox h2 {
+  letter-spacing: 0.2em;
+}
+
+.stay02 #staySec03 {
+  padding: 80px 0 85px;
+}
+
+.stay02 #staySec03 #staySec03_01 h2 {
+  margin-bottom: 20px;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-size: 1.714rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.stay02 #staySec03 #staySec03_01 p {
+  margin-bottom: 55px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.stay02 #staySec03 #staySec03_02 {
+  margin-bottom: 40px;
+}
+
+.stay02 #staySec03 #staySec03_03 {
+  margin-bottom: 20px;
+}
+
+.stay02 #staySec03 #staySec03_02 .container,
+.stay02 #staySec03 #staySec03_03 .container,
+.stay02 #staySec03 #staySec03_04 .container {
+  display: flex;
+  justify-content: center;
+}
+
+.stay02 #staySec03 #staySec03_03 .container {
+  flex-direction: row-reverse;
+}
+
+.stay02 #staySec03 #staySec03_02 .txtBox {
+  padding: 40px 0 0 30px;
+}
+
+.stay02 #staySec03 #staySec03_03 .txtBox {
+  padding: 30px 0 0 0;
+}
+
+.stay02 #staySec03 #staySec03_04 .txtBox {
+  padding: 90px 0 0 30px;
+}
+
+.stay02 #staySec03 #staySec03_02 h3,
+.stay02 #staySec03 #staySec03_03 h3,
+.stay02 #staySec03 #staySec03_04 h3 {
+  margin-bottom: 15px;
+  font-size: 1.429rem;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.stay02 #staySec03 #staySec03_02 p,
+.stay02 #staySec03 #staySec03_03 p,
+.stay02 #staySec03 #staySec03_04 p {
+  font-size: 0.929rem;
+  font-weight: bold;
+}
+
+.stay02 #staySec04 {
+  padding: 24px 0;
+  background-color: #e1d6cc;
+}
+
+.stay02 #staySec04 .container {
+  display: flex;
+  align-items: center;
+}
+
+.stay02 #staySec04 .imgBox {
+  width: 50%;
+  padding: 0 40px 0 0;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.stay02 #staySec04 .txtBox {
+  width: 50%;
+}
+
+.stay02 #staySec04 .txtBox h2 {
+  margin-bottom: 10px;
+  font-size: 1.429rem;
+  font-weight: bold;
+}
+
+.stay02 #staySec04 .txtBox p {
+  font-weight: bold;
+}
+
+.stay02 #staySec05 {
+  padding: 108px 0;
+}
+
+.stay02 #staySec05 #staySec05_01 {
+  margin-bottom: 60px;
+}
+
+.stay02 #staySec05 .container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+}
+
+.stay02 #staySec05 #staySec05_01 .container {
+  flex-direction: row-reverse;
+}
+
+.stay02 #staySec05 .imgBox {
+  position: relative;
+  width: calc(100% / 12 * 7);
+}
+
+.stay02 #staySec05 .imgBox .bx-pager {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.stay02 #staySec05 .txtBox {
+  width: calc(100% / 12 * 5);
+}
+
+.stay02 #staySec05 .txtBox h2 {
+  margin-bottom: 30px;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-size: 2.857rem;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.stay02 #staySec05 .txtBox h2 span {
+  display: block;
+  font-size: 1.143rem;
+}
+
+.stay02 #staySec05 .txtBox p {
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.stay02 #staySec05 .txtBox p:last-child {
+  margin-bottom: 0;
+}
+
+.stay02 #staySec05 #staySec05_01 .txtBox {
+  padding: 0 0 0 40px;
+}
+
+.stay02 #staySec05 #staySec05_01 .txtBox h2 {
+  letter-spacing: -5px;
+}
+
+.stay02 #staySec05 #staySec05_01 .txtBox h2 span {
+  letter-spacing: 0;
+}
+
+.stay02 #staySec05 #staySec05_02 .txtBox {
+  padding: 0 0 0 40px;
+}
+
+.stay02 #staySec06 {
+  margin-bottom: 120px;
+  background: #fcf3d4;
+}
+
+.stay02 #staySec06 .container {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 360px;
+  background: url(../images/img_stay02_007.jpg) no-repeat left center;
+}
+
+.stay02 #staySec06 .txtBox {
+  width: 400px;
+  padding: 50px 10px 0;
+  background: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+}
+
+.stay02 #staySec06 .txtBox .ico {
+  display: block;
+  width: 72px;
+  height: 53px;
+  margin: 0 auto 15px;
+  background: url(../images/ico_stay02_001.png) no-repeat;
+}
+
+.stay02 #staySec06 .txtBox h2 {
+  margin-bottom: 15px;
+  font-size: 1.857rem;
+  text-align: center;
+}
+
+.stay02 #staySec06 .txtBox p {
+  font-size: 0.929rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/************************************************
+	reserveForm(stay02)
+************************************************ */
+.reserveForm {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 1.286rem;
+  z-index: 1000;
+  transition: none;
+}
+
+.reserveForm input, .reserveForm select {
+  height: 26px;
+  margin: -3px 0 0;
+  padding: 0 10px 0;
+  border: 1px solid #9d9d9d;
+  outline: 0;
+  border-radius: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 1.143rem;
+  line-height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.reserveForm select {
+  padding-right: 22px;
+  background: #fff url(../images/ico_select_arrow.png) no-repeat right 5px center;
+}
+
+@-moz-document url-prefix() {
+  .reserveForm select {
+    padding: 0 22px 0 6px;
+    color: transparent !important;
+    text-shadow: 0 0 0 #000 !important;
+  }
+}
+
+.reserveForm input[type="text"] {
+  line-height: 24px !important;
+}
+
+.reserveForm select::-ms-expand {
+  display: none;
+}
+
+.reserveForm input[type="checkbox"] {
+  display: none;
+}
+
+.reserveForm input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 18px;
+  cursor: pointer;
+}
+
+.reserveForm input[type="checkbox"] + label::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: -8px;
+  background: #fff;
+  border: 1px solid #9d9d9d;
+}
+
+.reserveForm input[type="checkbox"]:checked + label::after {
+  position: absolute;
+  content: '';
+  top: 11px;
+  left: 0;
+  width: 14px;
+  height: 6px;
+  border-left: 3px solid #4a1212;
+  border-bottom: 3px solid #4a1212;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.reserveForm form {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.reserveForm .formLeft {
+  flex-basis: 648px;
+}
+
+.reserveForm .formRight {
+  padding-top: 5px;
+}
+
+.reserveForm .formLeftDate {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.reserveForm .formLeftDate .formLeftDateLabel {
+  width: 168px;
+}
+
+.reserveForm .formLeftDate .formLeftDateInput {
+  position: relative;
+}
+
+.reserveForm .formLeftNum {
+  display: flex;
+}
+
+.reserveForm .formLeftNum .formLeftNumLabel {
+  display: flex;
+  width: 168px;
+}
+
+.reserveForm .formLeftNum .formLeftNumLabel span:nth-of-type(2) {
+  margin: 0 5px 0 auto;
+}
+
+.reserveForm .inputYear {
+  width: 110px;
+}
+
+.reserveForm .inputMonth,
+.reserveForm .inputDate {
+  width: 60px;
+}
+
+.reserveForm .selectNum {
+  width: 110px;
+}
+
+.reserveForm .btnCalendar {
+  display: inline-block;
+}
+
+.reserveForm .icoCalendar {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -4px 15px 0 0;
+  background: url(../images/ico_carender.png) no-repeat center center;
+  text-indent: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.reserveForm .btnSeek {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.reserveForm .btnSeek input {
+  width: 215px;
+  height: 38px;
+  border: none;
+  border-radius: 7px;
+  background: url(../images/ico_search.png) no-repeat 48px 12px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 12px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 12px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+  font-weight: bold;
+  text-indent: 20px;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.reserveForm .btnCansel {
+  position: relative;
+}
+
+.reserveForm .btnCansel input {
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.071rem;
+  font-weight: bold;
+  color: #fff;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.reserveForm .btnCansel::before {
+  content: ">";
+  padding: 0 4px 0;
+  font-size: 0.714rem;
+  font-weight: bold;
+  line-height: 18px;
+  vertical-align: top;
+}
+
+.reserveForm .formBtn {
+  width: 123px;
+  height: 123px;
+  margin-left: auto;
+}
+
+.reserveForm .formBtn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 60px 0 0 0;
+  background: #701b19 url(../images/ico_bed.png) no-repeat center 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.42857;
+  letter-spacing: -1px;
+  color: #fff;
+  text-align: center;
+}
+
+.reserveForm input[type="button"]:hover,
+.reserveForm .formBtn a:hover {
+  opacity: 0.8;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .reserveForm input[type="checkbox"] + label::before {
+    margin-top: -10px;
+  }
+  .reserveForm input[type="checkbox"]:checked + label::after {
+    top: 9px;
+  }
+  .reserveForm .btnSeek input {
+    padding-top: 8px;
+  }
+}
+
+.reserveForm.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  font-size: 0.929rem;
+  font-weight: bold;
+}
+
+.reserveForm.fixed.hover {
+  transition: opacity 0.5s;
+  opacity: 1 !important;
+}
+
+.reserveForm.fixed input, .reserveForm.fixed select {
+  height: 20px;
+  padding: 0 5px 0;
+  font-size: 0.929rem;
+  line-height: 18px;
+}
+
+.reserveForm.fixed select {
+  padding-right: 22px;
+}
+
+.reserveForm.fixed input[type="text"] {
+  line-height: 18px !important;
+}
+
+@-moz-document url-prefix() {
+  .reserveForm.fixed select {
+    padding: 0 22px 0 2px;
+  }
+}
+
+.reserveForm.fixed input[type="checkbox"]:checked + label::after {
+  top: 7px;
+}
+
+.reserveForm.fixed form {
+  flex-direction: column;
+}
+
+.reserveForm.fixed .formLeft {
+  flex-basis: auto;
+  padding: 20px 20px 15px;
+}
+
+.reserveForm.fixed .formRight {
+  width: 100%;
+  padding: 3px 20px 12px;
+}
+
+.reserveForm.fixed .formRight br {
+  display: none;
+}
+
+.reserveForm.fixed .formLeftDate {
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.reserveForm.fixed .formLeftDate .formLeftDateLabel {
+  width: auto;
+  margin-bottom: 5px;
+}
+
+.reserveForm.fixed .formLeftNum {
+  display: flex;
+}
+
+.reserveForm.fixed .formLeftNum .formLeftNumLabel {
+  width: auto;
+}
+
+.reserveForm.fixed .formLeftNum .formLeftNumLabel span:first-of-type {
+  margin-right: 14px;
+}
+
+.reserveForm.fixed .formLeftNum .formLeftNumLabel span:nth-of-type(2) {
+  margin: 0 5px 0 auto;
+}
+
+.reserveForm.fixed .inputYear {
+  width: 60px;
+}
+
+.reserveForm.fixed .inputMonth,
+.reserveForm.fixed .inputDate {
+  width: 34px;
+}
+
+.reserveForm.fixed .selectNum {
+  width: 62px;
+}
+
+.reserveForm.fixed .btnCalendar {
+  display: block;
+  margin-top: 2px;
+}
+
+.reserveForm.fixed .icoCalendar {
+  margin: -4px 0 0 0;
+}
+
+.reserveForm.fixed .btnSeek {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.reserveForm.fixed .btnSeek input {
+  width: 100%;
+  height: 30px;
+  background: url(../images/ico_search.png) no-repeat 48px 8px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 8px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 8px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+}
+
+.reserveForm.fixed .btnCansel {
+  display: block;
+}
+
+.reserveForm.fixed .btnCansel input {
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.857rem;
+}
+
+.reserveForm.fixed .btnCansel::before {
+  font-size: 0.571rem;
+  line-height: 16px;
+}
+
+.reserveForm.fixed .formBtn {
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+}
+
+.reserveForm.fixed .formBtn a {
+  padding: 12px 12px 12px 106px;
+  background: #701b19 url(../images/ico_bed.png) no-repeat 47px center;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.28571;
+  text-align: left;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .reserveForm.fixed .btnSeek input {
+    padding-top: 8px;
+  }
+}
+
+/************************************************
+	restaurant
+************************************************ */
+.restaurant {
+  min-width: 1200px;
+}
+
+.restaurant #header .arrow {
+  bottom: 153px;
+}
+
+.restaurant .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.restaurant .catch {
+  font-size: 2.285rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.restaurant .catch:after {
+  content: "――";
+  letter-spacing: -0.15em;
+}
+
+.restaurant #restaurantSec01, .restaurant #restaurantSec02,
+.restaurant #restaurantSec03, .restaurant #restaurantSec04 {
+  margin: 0 auto;
+  width: 1140px;
+  padding: 50px 0;
+  position: relative;
+}
+
+.restaurant #restaurantSec01 .shopLogo, .restaurant #restaurantSec02 .shopLogo,
+.restaurant #restaurantSec03 .shopLogo, .restaurant #restaurantSec04 .shopLogo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.restaurant #restaurantSec01 .shopLogo + p, .restaurant #restaurantSec02 .shopLogo + p,
+.restaurant #restaurantSec03 .shopLogo + p, .restaurant #restaurantSec04 .shopLogo + p {
+  font-size: 1.286rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.restaurant #restaurantSec01 .imgBox, .restaurant #restaurantSec01 .txtBox, .restaurant #restaurantSec02 .imgBox,
+.restaurant #restaurantSec02 .txtBox,
+.restaurant #restaurantSec03 .imgBox, .restaurant #restaurantSec03 .txtBox, .restaurant #restaurantSec04 .imgBox, .restaurant #restaurantSec04 .txtBox {
+  width: 100%;
+}
+
+.restaurant #restaurantSec01 .imgBox, .restaurant #restaurantSec02 .imgBox,
+.restaurant #restaurantSec03 .imgBox, .restaurant #restaurantSec04 .imgBox {
+  border: 1px solid #000;
+  margin-bottom: 30px;
+}
+
+.restaurant #restaurantSec01 .txtBox, .restaurant #restaurantSec02 .txtBox,
+.restaurant #restaurantSec03 .txtBox, .restaurant #restaurantSec04 .txtBox {
+  line-height: 1.5;
+  display: flex;
+}
+
+.restaurant #restaurantSec01 .txtBox h2, .restaurant #restaurantSec02 .txtBox h2,
+.restaurant #restaurantSec03 .txtBox h2, .restaurant #restaurantSec04 .txtBox h2 {
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  font-size: 2.143rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+}
+
+.restaurant #restaurantSec01 .txtBox h2 span, .restaurant #restaurantSec02 .txtBox h2 span,
+.restaurant #restaurantSec03 .txtBox h2 span, .restaurant #restaurantSec04 .txtBox h2 span {
+  font-size: 0.857rem;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm01, .restaurant #restaurantSec02 .txtBox .txtClm01,
+.restaurant #restaurantSec03 .txtBox .txtClm01, .restaurant #restaurantSec04 .txtBox .txtClm01 {
+  text-align: left;
+  padding: 0 20px 0 0;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm01 dt, .restaurant #restaurantSec01 .txtBox .txtClm01 dd, .restaurant #restaurantSec01 .txtBox .txtClm01 li, .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+.restaurant #restaurantSec02 .txtBox .txtClm01 dd,
+.restaurant #restaurantSec02 .txtBox .txtClm01 li,
+.restaurant #restaurantSec03 .txtBox .txtClm01 dt, .restaurant #restaurantSec03 .txtBox .txtClm01 dd, .restaurant #restaurantSec03 .txtBox .txtClm01 li, .restaurant #restaurantSec04 .txtBox .txtClm01 dt, .restaurant #restaurantSec04 .txtBox .txtClm01 dd, .restaurant #restaurantSec04 .txtBox .txtClm01 li {
+  font-weight: bold;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm01 dt, .restaurant #restaurantSec01 .txtBox .txtClm01 dd, .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+.restaurant #restaurantSec02 .txtBox .txtClm01 dd,
+.restaurant #restaurantSec03 .txtBox .txtClm01 dt, .restaurant #restaurantSec03 .txtBox .txtClm01 dd, .restaurant #restaurantSec04 .txtBox .txtClm01 dt, .restaurant #restaurantSec04 .txtBox .txtClm01 dd {
+  font-size: 0.929rem;
+  display: inline-block;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm01 dt, .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+.restaurant #restaurantSec03 .txtBox .txtClm01 dt, .restaurant #restaurantSec04 .txtBox .txtClm01 dt {
+  width: 3.5em;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm01 ul, .restaurant #restaurantSec02 .txtBox .txtClm01 ul,
+.restaurant #restaurantSec03 .txtBox .txtClm01 ul, .restaurant #restaurantSec04 .txtBox .txtClm01 ul {
+  margin-top: 10px;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm01 li, .restaurant #restaurantSec02 .txtBox .txtClm01 li,
+.restaurant #restaurantSec03 .txtBox .txtClm01 li, .restaurant #restaurantSec04 .txtBox .txtClm01 li {
+  font-size: 0.714rem;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm02, .restaurant #restaurantSec02 .txtBox .txtClm02,
+.restaurant #restaurantSec03 .txtBox .txtClm02, .restaurant #restaurantSec04 .txtBox .txtClm02 {
+  padding: 0 0 0 20px;
+  border-left: 1px solid #000;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm02 .table, .restaurant #restaurantSec02 .txtBox .txtClm02 .table,
+.restaurant #restaurantSec03 .txtBox .txtClm02 .table, .restaurant #restaurantSec04 .txtBox .txtClm02 .table {
+  font-size: 0.929rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm02 .tel, .restaurant #restaurantSec02 .txtBox .txtClm02 .tel,
+.restaurant #restaurantSec03 .txtBox .txtClm02 .tel, .restaurant #restaurantSec04 .txtBox .txtClm02 .tel {
+  font-size: 1.286rem;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm02 .tel span, .restaurant #restaurantSec02 .txtBox .txtClm02 .tel span,
+.restaurant #restaurantSec03 .txtBox .txtClm02 .tel span, .restaurant #restaurantSec04 .txtBox .txtClm02 .tel span {
+  font-size: 0.929rem;
+}
+
+.restaurant #restaurantSec01 .txtBox .txtClm02 .tel:before, .restaurant #restaurantSec02 .txtBox .txtClm02 .tel:before,
+.restaurant #restaurantSec03 .txtBox .txtClm02 .tel:before, .restaurant #restaurantSec04 .txtBox .txtClm02 .tel:before {
+  content: "";
+  background: url(../images/ico_tel.png) no-repeat;
+  width: 13px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.restaurant #restaurantSec01 .txtBox:after, .restaurant #restaurantSec02 .txtBox:after,
+.restaurant #restaurantSec03 .txtBox:after, .restaurant #restaurantSec04 .txtBox:after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 1px;
+  background: #000;
+  bottom: 0;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.restaurant #restaurantSec01 {
+  padding-top: 0;
+}
+
+.restaurant #restaurantSec03 .txtBox h2 {
+  letter-spacing: 0.08em;
+}
+
+.restaurant #restaurantSec03 .txtBox .txtClm01 p {
+  font-size: 0.929rem;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.restaurant #restaurantSec04 {
+  margin-bottom: 100px;
+}
+
+.restaurant #restaurantSec05 {
+  margin-bottom: 120px;
+  background: url(../images/img_restaurant_maison001.jpg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  height: 360px;
+  padding-top: 45px;
+}
+
+.restaurant #restaurantSec05 .txtBox {
+  width: 570px;
+  position: absolute;
+  right: 15vw;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.restaurant #restaurantSec05 .txtBox .inner {
+  margin: 0 auto;
+  padding: 30px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.restaurant #restaurantSec05 .txtBox .logo {
+  padding-right: 20px;
+  width: 115px;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm {
+  width: 360px;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm h2 {
+  font-size: 2.143rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  margin: 10px 0;
+  letter-spacing: -0.165em;
+  line-height: 1.5;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm h2 span {
+  font-size: 0.857rem;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm p {
+  font-size: 0.929rem;
+  font-weight: bold;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm .tel {
+  font-size: 1.286rem;
+  font-weight: bold;
+  position: relative;
+  padding-left: 15px;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm .tel span {
+  font-size: 0.929rem;
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm .tel:before {
+  content: "";
+  background: url(../images/ico_tel.png) no-repeat;
+  width: 13px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.restaurant #restaurantSec05 .txtBox .txtClm .btn01 {
+  position: relative;
+  z-index: 50;
+}
+
+#restaurantSec01 .imgBox, #restaurantSec02 .imgBox,
+#restaurantSec03 .imgBox, #restaurantSec04 .imgBox {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+#restaurantSec01 .bx-wrapper, #restaurantSec02 .bx-wrapper,
+#restaurantSec03 .bx-wrapper, #restaurantSec04 .bx-wrapper {
+  margin-bottom: 0;
+  width: -webkit-calc(100% - 300px);
+  width: calc(100% - 300px);
+  height: auto;
+}
+
+#restaurantSec01 .bx-wrapper .bx-viewport, #restaurantSec02 .bx-wrapper .bx-viewport,
+#restaurantSec03 .bx-wrapper .bx-viewport, #restaurantSec04 .bx-wrapper .bx-viewport {
+  box-shadow: none;
+  border: none;
+  left: 0;
+  overflow: hidden;
+}
+
+#restaurantSec01 #bx-pager05, #restaurantSec01 #bx-pager06,
+#restaurantSec01 #bx-pager07, #restaurantSec01 #bx-pager08, #restaurantSec02 #bx-pager05,
+#restaurantSec02 #bx-pager06,
+#restaurantSec02 #bx-pager07,
+#restaurantSec02 #bx-pager08,
+#restaurantSec03 #bx-pager05, #restaurantSec03 #bx-pager06,
+#restaurantSec03 #bx-pager07, #restaurantSec03 #bx-pager08, #restaurantSec04 #bx-pager05, #restaurantSec04 #bx-pager06,
+#restaurantSec04 #bx-pager07, #restaurantSec04 #bx-pager08 {
+  width: 300px;
+}
+
+#restaurantSec01 #bx-pager05 ul, #restaurantSec01 #bx-pager06 ul,
+#restaurantSec01 #bx-pager07 ul, #restaurantSec01 #bx-pager08 ul, #restaurantSec02 #bx-pager05 ul,
+#restaurantSec02 #bx-pager06 ul,
+#restaurantSec02 #bx-pager07 ul,
+#restaurantSec02 #bx-pager08 ul,
+#restaurantSec03 #bx-pager05 ul, #restaurantSec03 #bx-pager06 ul,
+#restaurantSec03 #bx-pager07 ul, #restaurantSec03 #bx-pager08 ul, #restaurantSec04 #bx-pager05 ul, #restaurantSec04 #bx-pager06 ul,
+#restaurantSec04 #bx-pager07 ul, #restaurantSec04 #bx-pager08 ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+#restaurantSec01 #bx-pager05 li, #restaurantSec01 #bx-pager06 li,
+#restaurantSec01 #bx-pager07 li, #restaurantSec01 #bx-pager08 li, #restaurantSec02 #bx-pager05 li,
+#restaurantSec02 #bx-pager06 li,
+#restaurantSec02 #bx-pager07 li,
+#restaurantSec02 #bx-pager08 li,
+#restaurantSec03 #bx-pager05 li, #restaurantSec03 #bx-pager06 li,
+#restaurantSec03 #bx-pager07 li, #restaurantSec03 #bx-pager08 li, #restaurantSec04 #bx-pager05 li, #restaurantSec04 #bx-pager06 li,
+#restaurantSec04 #bx-pager07 li, #restaurantSec04 #bx-pager08 li {
+  width: -webkit-calc(100% / 3);
+  width: calc(100% / 3);
+}
+
+/************************************************
+	reserveForm(restaurant)
+************************************************ */
+#restaurantReserveForm .container {
+  display: flex;
+  flex-direction: column;
+}
+
+#restaurantReserveForm #tc-widget {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 30px 0;
+  font-family: inherit;
+}
+
+#restaurantReserveForm #tc-widget .tc-header {
+  display: none;
+}
+
+#restaurantReserveForm #tc-widget .tc-body {
+  background: transparent;
+  height: auto;
+  padding: 0;
+  border: 0;
+}
+
+#restaurantReserveForm #tc-widget .tc-body form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#restaurantReserveForm #tc-widget .tc-content {
+  display: flex;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-date {
+  display: block;
+  order: 1;
+  margin: 0 10px 0 0;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-date:before {
+  content: "ご利用日時";
+  margin-right: 6px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-date input {
+  width: 145px;
+  background: #fff url(../images/ico_carender02.png) no-repeat right 5px center;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-time {
+  display: block;
+  order: 2;
+  margin: 0 20px 0 0;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-time select {
+  width: 80px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-ppl {
+  display: block;
+  order: 3;
+  margin: 0 20px 0 0;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-ppl::before {
+  content: "ご利用人数";
+  margin-right: 6px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-ppl::after {
+  content: "様";
+  margin-left: 6px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-ppl select {
+  width: 80px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-shop {
+  display: block;
+  order: 4;
+  margin: 0;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-shop::before {
+  content: "ご利用店舗";
+  margin-right: 6px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-shop select {
+  width: 200px;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-date::before,
+#restaurantReserveForm #tc-widget .tc-content .tc-time::before,
+#restaurantReserveForm #tc-widget .tc-content .tc-ppl::before,
+#restaurantReserveForm #tc-widget .tc-content .tc-shop::before {
+  display: inline-block;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-icon {
+  display: none;
+}
+
+#restaurantReserveForm #tc-widget .tc-content .tc-wrap-input {
+  padding: 0;
+  vertical-align: top;
+}
+
+#restaurantReserveForm #tc-widget .tc-wrap-book {
+  display: block;
+  margin: 0;
+  text-align: right;
+}
+
+#restaurantReserveForm #tc-widget .tc-wrap-book input[type="submit"] {
+  width: 215px;
+  height: 38px;
+  border: none;
+  border-radius: 7px;
+  background: url(../images/ico_search.png) no-repeat 48px 12px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 12px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 12px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+  font-weight: bold;
+  text-indent: 20px;
+  letter-spacing: 4px;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+#restaurantReserveForm #tc-widget input, #restaurantReserveForm #tc-widget select {
+  float: none;
+  height: 30px;
+  margin: -3px 0 0;
+  padding: 0 10px 0;
+  border: 1px solid #9d9d9d;
+  outline: 0;
+  border-radius: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 1.143rem;
+  color: #000;
+  line-height: 28px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@-moz-document url-prefix() {
+  #restaurantReserveForm #tc-widget select {
+    padding: 0 22px 0 6px;
+    color: transparent !important;
+    text-shadow: 0 0 0 #000 !important;
+  }
+}
+
+#restaurantReserveForm #tc-widget input:focus,
+#restaurantReserveForm #tc-widget select:focus {
+  box-shadow: none;
+}
+
+#restaurantReserveForm #tc-widget select {
+  padding-right: 22px;
+  background: #fff url(../images/ico_select_arrow.png) no-repeat right 5px center;
+}
+
+#restaurantReserveForm #tc-widget input[type="text"] {
+  line-height: 28px !important;
+}
+
+#restaurantReserveForm #tc-widget select::-ms-expand {
+  display: none;
+}
+
+#restaurantReserveForm #tc-widget input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+@media all and (-ms-high-contrast: none) {
+  #restaurantReserveForm #tc-widget .tc-wrap-book input[type="submit"] {
+    padding-top: 8px;
+  }
+}
+
+#restaurantReserveForm.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  font-size: 0.929rem;
+  font-weight: bold;
+}
+
+#restaurantReserveForm.fixed.hover {
+  transition: opacity 0.5s;
+  opacity: 1 !important;
+}
+
+#restaurantReserveForm.fixed .container {
+  display: flex;
+  flex-direction: column;
+}
+
+#restaurantReserveForm.fixed #tc-widget {
+  padding: 20px 20px 30px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-body form {
+  flex-direction: column;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content {
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-end;
+  width: 215px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-date {
+  width: 132px;
+  margin: 0 0 0 0;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-date input {
+  width: 100%;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-time {
+  width: 83px;
+  margin: 0;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-time .tc-wrap-input {
+  width: 100%;
+  padding-left: 5px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-time select {
+  width: 100%;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-ppl {
+  width: 215px;
+  margin: 10px 0 10px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-ppl select {
+  width: 80px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-shop {
+  width: 215px;
+  margin: 0 0 20px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-shop select {
+  width: 100%;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-date::before,
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-time::before,
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-ppl::before,
+#restaurantReserveForm.fixed #tc-widget .tc-content .tc-shop::before {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#restaurantReserveForm.fixed #tc-widget input, #restaurantReserveForm.fixed #tc-widget select {
+  height: 26px;
+  padding: 0 5px 0;
+  font-size: 0.929rem;
+  line-height: 24px;
+}
+
+#restaurantReserveForm.fixed #tc-widget select {
+  padding-right: 24px;
+}
+
+#restaurantReserveForm.fixed #tc-widget input[type="text"] {
+  line-height: 24px !important;
+}
+
+@-moz-document url-prefix() {
+  #restaurantReserveForm.fixed #tc-widget select {
+    padding: 0 22px 0 2px;
+  }
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-wrap-book {
+  width: 215px;
+}
+
+#restaurantReserveForm.fixed #tc-widget .tc-wrap-book input[type="submit"] {
+  width: 100%;
+  height: 30px;
+  background: url(../images/ico_search.png) no-repeat 48px 8px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 8px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 8px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+}
+
+@media all and (-ms-high-contrast: none) {
+  #restaurantReserveForm.fixed #tc-widget .tc-wrap-book input[type="submit"] {
+    padding-top: 8px;
+  }
+}
+
+.formFloted .pika-single {
+  position: fixed !important;
+  top: 46px !important;
+  right: 20px !important;
+  left: auto !important;
+}
+
+/************************************************
+	access
+************************************************ */
+.access {
+  min-width: 1200px;
+}
+
+.access .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.access #accessSec01 {
+  margin-bottom: 100px;
+  padding: 20px 0 0;
+}
+
+.access #accessSec01 .txtBox h2 {
+  font-size: 2.857rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.access #accessSec01 .txtBox h2 span {
+  display: block;
+  font-size: 1.143rem;
+}
+
+.access #accessSec01 imgBox {
+  text-align: center;
+}
+
+.access #accessSec02 {
+  margin-bottom: 100px;
+}
+
+.access #accessSec02 .txtBox h2 {
+  margin-bottom: 45px;
+  font-size: 2.857rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.access #accessSec02 .txtBox h2 span.letterSpace {
+  letter-spacing: -4px;
+}
+
+.access #accessSec02 .txtBox h2 span.subTit {
+  display: block;
+  font-size: 1.143rem;
+}
+
+.access #accessSec02 imgBox {
+  text-align: center;
+}
+
+.access #accessSec03 {
+  margin-bottom: 100px;
+}
+
+.access #accessSec03 .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.access #accessSec03 .txtBox {
+  width: calc(100% / 12 * 5);
+  padding: 0 80px 0 0;
+}
+
+.access #accessSec03 .txtBox h2 {
+  margin-bottom: 40px;
+  font-size: 2.857rem;
+  font-family: Garamond , "Times New Roman" , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.access #accessSec03 .txtBox h2 span.letterSpace {
+  letter-spacing: -4px;
+}
+
+.access #accessSec03 .txtBox h2 span.subTit {
+  display: block;
+  font-size: 1.143rem;
+}
+
+.access #accessSec03 .txtBox .txtBoxSub:first-of-type {
+  margin-bottom: 50px;
+}
+
+.access #accessSec03 .txtBox h3 {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #000;
+  font-size: 1.429rem;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.access #accessSec03 .txtBox p {
+  font-weight: bold;
+  text-align: left;
+}
+
+.access #accessSec03 .imgBox {
+  width: calc(100% / 12 * 7);
+  padding: 0 0 0 20px;
+  text-align: center;
+}
+
+.access #accessSec03 .imgBox .imgWrap {
+  display: inline-block;
+  padding: 9px;
+  background: #e8e8e8;
+}
+
+.access #accessSec03 .imgBox img {
+  border: 5px solid #fff;
+}
+
+/************************************************
+	ch
+************************************************ */
+html[lang="zh-CN"] {
+  /************************************************
+		toppage
+	************************************************ */
+  /************************************************
+		stay02
+	************************************************ */
+  /************************************************
+		reserveForm(stay02)
+	************************************************ */
+  /************************************************
+		restaurant
+	************************************************ */
+  /************************************************
+		reserveForm(restaurant)
+	************************************************ */
+  /************************************************
+		access
+	************************************************ */
+}
+
+html[lang="zh-CN"] body {
+  font-family: "Hiragino Sans GB", "Hiragino Sans GB W3", "STXihei", "Microsoft YaHei", 'SimSun', sans-serif;
+}
+
+html[lang="zh-CN"] #instagram h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] .home #topSec01 .txtBox h2, html[lang="zh-CN"] .home #topSec02 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] #topStay .txtBox, html[lang="zh-CN"] #topPhoto .txtBox, html[lang="zh-CN"] #topMice .txtBox {
+  width: 525px;
+}
+
+html[lang="zh-CN"] #topStay .txtBox h2, html[lang="zh-CN"] #topPhoto .txtBox h2, html[lang="zh-CN"] #topMice .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] #topRestaurant .txtBox h2, html[lang="zh-CN"] #topKaidan .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] .stay02 #staySec01 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] .stay02 #staySec02 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+  letter-spacing: 0.1em;
+}
+
+html[lang="zh-CN"] .stay02 #staySec03 #staySec03_01 h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] .stay02 #staySec05 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] #stayReserveForm {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 1.286rem;
+  z-index: 1000;
+  transition: none;
+}
+
+html[lang="zh-CN"] #stayReserveForm input, html[lang="zh-CN"] #stayReserveForm select {
+  height: 26px;
+  margin: -3px 0 0;
+  padding: 0 10px 0;
+  border: 1px solid #9d9d9d;
+  outline: 0;
+  border-radius: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 1.143rem;
+  line-height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+html[lang="zh-CN"] #stayReserveForm select {
+  padding-right: 22px;
+  background: #fff url(../images/ico_select_arrow.png) no-repeat right 5px center;
+}
+
+@-moz-document url-prefix() {
+  html[lang="zh-CN"] #stayReserveForm select {
+    padding: 0 22px 0 6px;
+    color: transparent !important;
+    text-shadow: 0 0 0 #000 !important;
+  }
+}
+
+html[lang="zh-CN"] #stayReserveForm input[type="text"] {
+  line-height: 24px !important;
+}
+
+html[lang="zh-CN"] #stayReserveForm select::-ms-expand {
+  display: none;
+}
+
+html[lang="zh-CN"] #stayReserveForm form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formLeftDate {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formLeftDate .formLeftDateLabel {
+  width: 80px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formLeftDate .formLeftDateInput {
+  position: relative;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formRightNum,
+html[lang="zh-CN"] #stayReserveForm .formRightCode {
+  display: flex;
+  justify-content: space-between;
+  width: 380px;
+  margin-bottom: 5px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formRightNum .formRightLabel,
+html[lang="zh-CN"] #stayReserveForm .formRightCode .formRightLabel {
+  width: 160px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formRightNum .formRightInput,
+html[lang="zh-CN"] #stayReserveForm .formRightCode .formRightInput {
+  width: 230px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formRightNum .formRightInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+html[lang="zh-CN"] #stayReserveForm .inputYear {
+  width: 80px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .inputMonth,
+html[lang="zh-CN"] #stayReserveForm .inputDate {
+  width: 80px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .selectNum {
+  width: 60px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .inputCode {
+  width: 100%;
+}
+
+html[lang="zh-CN"] #stayReserveForm .btnSeek {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .btnSeek input {
+  width: 215px;
+  height: 38px;
+  border: none;
+  border-radius: 7px;
+  background: url(../images/ico_search.png) no-repeat 48px 11px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 11px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 11px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+  font-weight: bold;
+  text-indent: 20px;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formBtn {
+  width: 215px;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formBtn .formSubBtn {
+  text-align: center;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formBtn .linkCansel a {
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.071rem;
+  font-weight: bold;
+  color: #fff;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+html[lang="zh-CN"] #stayReserveForm .formBtn .linkCansel::before {
+  content: ">";
+  padding: 0 4px 0;
+  font-size: 0.714rem;
+  font-weight: bold;
+  line-height: 24px;
+  vertical-align: top;
+}
+
+html[lang="zh-CN"] #stayReserveForm input[type="button"]:hover,
+html[lang="zh-CN"] #stayReserveForm .formBtn a:hover {
+  opacity: 0.8;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  padding: 20px;
+  font-size: 0.929rem;
+  font-weight: bold;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed.hover {
+  transition: opacity 0.5s;
+  opacity: 1 !important;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed input, html[lang="zh-CN"] #stayReserveForm.fixed select {
+  height: 20px;
+  padding: 0 5px 0;
+  font-size: 0.929rem;
+  line-height: 18px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed select {
+  padding-right: 22px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed input[type="text"] {
+  line-height: 18px !important;
+}
+
+@-moz-document url-prefix() {
+  html[lang="zh-CN"] #stayReserveForm.fixed select {
+    padding: 0 22px 0 2px;
+  }
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed form {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formRight {
+  margin-bottom: 10px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formLeftDate {
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formLeftDate .formLeftDateLabel {
+  width: auto;
+  margin-bottom: 2px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightNum,
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightCode {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  margin-bottom: 12px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightNum .formRightLabel,
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightCode .formRightLabel {
+  width: auto;
+  margin-bottom: 2px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightNum .formRightInput,
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightCode .formRightInput {
+  width: auto;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formRightNum .formRightInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .inputYear {
+  width: 70px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .inputMonth {
+  width: 60px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .inputDate {
+  width: 34px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .selectNum {
+  width: 76px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .btnSeek {
+  display: block;
+  margin-bottom: 12px;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .btnSeek input {
+  width: 100%;
+  height: 30px;
+  background: url(../images/ico_search.png) no-repeat 48px 7px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 7px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 7px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formBtn {
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formBtn .linkCansel a {
+  font-size: 0.857rem;
+}
+
+html[lang="zh-CN"] #stayReserveForm.fixed .formBtn .linkCansel::before {
+  line-height: 20px;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .shopLogo + p, html[lang="zh-CN"] .restaurant #restaurantSec02 .shopLogo + p,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .shopLogo + p, html[lang="zh-CN"] .restaurant #restaurantSec04 .shopLogo + p {
+  font-size: 1.143rem;
+  font-weight: normal;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox {
+  display: flex;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox h2, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox h2,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox h2, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+  margin-right: auto;
+  padding: 0 30px;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox .txtClm01 dt, html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox .txtClm01 dd, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox .txtClm01 dd,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox .txtClm01 dt, html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox .txtClm01 dd, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 dt, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 dd {
+  display: block;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox .txtClm01 dt, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox .txtClm01 dt, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 dt {
+  width: auto;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox .txtClm01 ul, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox .txtClm01 ul,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox .txtClm01 ul, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 ul {
+  margin-top: 10px;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox .txtClm01 li, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox .txtClm01 li,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox .txtClm01 li, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 li {
+  font-size: 0.857rem;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec01 .txtBox .txtClm02, html[lang="zh-CN"] .restaurant #restaurantSec02 .txtBox .txtClm02,
+html[lang="zh-CN"] .restaurant #restaurantSec03 .txtBox .txtClm02, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm02 {
+  width: 30%;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 dt, html[lang="zh-CN"] .restaurant #restaurantSec04 .txtBox .txtClm01 dd {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+html[lang="zh-CN"] .restaurant #restaurantSec05 .txtBox .txtClm h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] #restaurantReserveForm #tc-widget .tc-content .tc-date:before {
+  content: "的日期和时间";
+}
+
+html[lang="zh-CN"] #restaurantReserveForm #tc-widget .tc-content .tc-ppl::before {
+  content: "人数";
+}
+
+html[lang="zh-CN"] #restaurantReserveForm #tc-widget .tc-content .tc-ppl::after {
+  display: none;
+}
+
+html[lang="zh-CN"] #restaurantReserveForm #tc-widget .tc-content .tc-shop::before {
+  content: "餐厅";
+}
+
+html[lang="zh-CN"] .access #accessSec01 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] .access #accessSec02 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+html[lang="zh-CN"] .access #accessSec03 .txtBox h2 {
+  font-family: "Songti SC", 'SimSun', serif;
+}
+
+/************************************************
+	en
+************************************************ */
+html[lang="en"] {
+  /************************************************
+		toppage
+	************************************************ */
+  /************************************************
+		stay02
+	************************************************ */
+  /************************************************
+		reserveForm(stay02)
+	************************************************ */
+  /************************************************
+		restaurant
+	************************************************ */
+  /************************************************
+		access
+	************************************************ */
+}
+
+html[lang="en"] body {
+  font-family: Helvetica , Arial , Verdana , Roboto , sans-serif;
+}
+
+html[lang="en"] #instagram h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] .home #topSec01 .txtBox h2, html[lang="en"] .home #topSec02 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] #topStay .txtBox h2, html[lang="en"] #topPhoto .txtBox h2, html[lang="en"] #topMice .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] #topRestaurant .txtBox h2, html[lang="en"] #topKaidan .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] #topMice .txtBox {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+html[lang="en"] #topMice .txtBox h2 {
+  font-size: 1.857rem;
+}
+
+html[lang="en"] #topMice .txtBox h2 span {
+  font-size: 2.857rem;
+  padding-right: 0;
+}
+
+html[lang="en"] #topMice .txtBox h2 span.i {
+  padding-left: 0.2em;
+}
+
+html[lang="en"] #topMice .txtBox h3 {
+  margin-bottom: 20px;
+  font-size: 1.286rem;
+  font-weight: bold;
+}
+
+html[lang="en"] #topMice .txtBox h3 + p {
+  line-height: 1.6;
+}
+
+html[lang="en"] .stay02 #staySec01 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] .stay02 #staySec02 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+html[lang="en"] .stay02 #staySec03 #staySec03_01 h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] .stay02 #staySec05 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] #stayReserveForm {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 1.143rem;
+  z-index: 1000;
+  transition: none;
+}
+
+html[lang="en"] #stayReserveForm input, html[lang="en"] #stayReserveForm select {
+  height: 26px;
+  margin: -3px 0 0;
+  padding: 0 10px 0;
+  border: 1px solid #9d9d9d;
+  outline: 0;
+  border-radius: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 1.143rem;
+  line-height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+html[lang="en"] #stayReserveForm select {
+  padding-right: 22px;
+  background: #fff url(../images/ico_select_arrow.png) no-repeat right 5px center;
+}
+
+@-moz-document url-prefix() {
+  html[lang="en"] #stayReserveForm select {
+    padding: 0 22px 0 6px;
+    color: transparent !important;
+    text-shadow: 0 0 0 #000 !important;
+  }
+}
+
+html[lang="en"] #stayReserveForm input[type="text"] {
+  line-height: 24px !important;
+}
+
+html[lang="en"] #stayReserveForm select::-ms-expand {
+  display: none;
+}
+
+html[lang="en"] #stayReserveForm form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+html[lang="en"] #stayReserveForm .formLeftDate {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+html[lang="en"] #stayReserveForm .formLeftDate .formLeftDateLabel {
+  width: 160px;
+}
+
+html[lang="en"] #stayReserveForm .formLeftDate .formLeftDateInput {
+  position: relative;
+}
+
+html[lang="en"] #stayReserveForm .formRightNum,
+html[lang="en"] #stayReserveForm .formRightCode {
+  display: flex;
+  justify-content: space-between;
+  width: 460px;
+  margin-bottom: 5px;
+}
+
+html[lang="en"] #stayReserveForm .formRightNum .formRightLabel,
+html[lang="en"] #stayReserveForm .formRightCode .formRightLabel {
+  width: 190px;
+}
+
+html[lang="en"] #stayReserveForm .formRightNum .formRightInput,
+html[lang="en"] #stayReserveForm .formRightCode .formRightInput {
+  width: 260px;
+}
+
+html[lang="en"] #stayReserveForm .formRightNum .formRightInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+html[lang="en"] #stayReserveForm .inputYear {
+  width: 80px;
+}
+
+html[lang="en"] #stayReserveForm .inputMonth,
+html[lang="en"] #stayReserveForm .inputDate {
+  width: 80px;
+}
+
+html[lang="en"] #stayReserveForm .selectNum {
+  width: 60px;
+}
+
+html[lang="en"] #stayReserveForm .inputCode {
+  width: 100%;
+}
+
+html[lang="en"] #stayReserveForm .btnSeek {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+html[lang="en"] #stayReserveForm .btnSeek input {
+  width: 215px;
+  height: 38px;
+  border: none;
+  border-radius: 7px;
+  background: url(../images/ico_search.png) no-repeat 40px 11px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 40px 11px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 40px 11px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+  font-weight: bold;
+  text-indent: 20px;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+html[lang="en"] #stayReserveForm .formBtn {
+  width: 215px;
+}
+
+html[lang="en"] #stayReserveForm .formBtn .formSubBtn {
+  text-align: center;
+}
+
+html[lang="en"] #stayReserveForm .formBtn .linkCansel a {
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.071rem;
+  font-weight: bold;
+  color: #fff;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+html[lang="en"] #stayReserveForm .formBtn .linkCansel::before {
+  content: ">";
+  padding: 0 4px 0;
+  font-size: 0.714rem;
+  font-weight: bold;
+  line-height: 24px;
+  vertical-align: top;
+}
+
+html[lang="en"] #stayReserveForm input[type="button"]:hover,
+html[lang="en"] #stayReserveForm .formBtn a:hover {
+  opacity: 0.8;
+}
+
+html[lang="en"] #stayReserveForm.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  padding: 20px;
+  font-size: 0.857rem;
+  font-weight: bold;
+}
+
+html[lang="en"] #stayReserveForm.fixed.hover {
+  transition: opacity 0.5s;
+  opacity: 1 !important;
+}
+
+html[lang="en"] #stayReserveForm.fixed input, html[lang="en"] #stayReserveForm.fixed select {
+  height: 20px;
+  padding: 0 5px 0;
+  font-size: 0.929rem;
+  line-height: 18px;
+}
+
+html[lang="en"] #stayReserveForm.fixed select {
+  padding-right: 22px;
+}
+
+html[lang="en"] #stayReserveForm.fixed input[type="text"] {
+  line-height: 18px !important;
+}
+
+@-moz-document url-prefix() {
+  html[lang="en"] #stayReserveForm.fixed select {
+    padding: 0 22px 0 2px;
+  }
+}
+
+html[lang="en"] #stayReserveForm.fixed form {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formRight {
+  margin-bottom: 10px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formLeftDate {
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formLeftDate .formLeftDateLabel {
+  width: auto;
+  margin-bottom: 2px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formRightNum,
+html[lang="en"] #stayReserveForm.fixed .formRightCode {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  margin-bottom: 12px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formRightNum .formRightLabel,
+html[lang="en"] #stayReserveForm.fixed .formRightCode .formRightLabel {
+  width: auto;
+  margin-bottom: 2px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formRightNum .formRightInput,
+html[lang="en"] #stayReserveForm.fixed .formRightCode .formRightInput {
+  width: auto;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formRightNum .formRightInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formRightNum .formRightInput div:first-child {
+  margin-right: 10px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .inputYear {
+  width: 70px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .inputMonth {
+  width: 60px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .inputDate {
+  width: 34px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .selectNum {
+  width: 60px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .btnSeek {
+  display: block;
+  margin-bottom: 12px;
+}
+
+html[lang="en"] #stayReserveForm.fixed .btnSeek input {
+  width: 100%;
+  height: 30px;
+  background: url(../images/ico_search.png) no-repeat 48px 7px, -moz-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 7px, -webkit-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  background: url(../images/ico_search.png) no-repeat 48px 7px, -ms-linear-gradient(90deg, #d1b6a1 50%, #bfa494 50%);
+  font-family: inherit;
+  font-size: 1.286rem;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formBtn {
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formBtn .linkCansel a {
+  font-size: 0.857rem;
+}
+
+html[lang="en"] #stayReserveForm.fixed .formBtn .linkCansel::before {
+  line-height: 20px;
+}
+
+html[lang="en"] .restaurant .catch:after {
+  letter-spacing: -0.3em;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .shopLogo + p, html[lang="en"] .restaurant #restaurantSec02 .shopLogo + p,
+html[lang="en"] .restaurant #restaurantSec03 .shopLogo + p, html[lang="en"] .restaurant #restaurantSec04 .shopLogo + p {
+  font-size: 1.143rem;
+  font-weight: normal;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox, html[lang="en"] .restaurant #restaurantSec02 .txtBox,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox, html[lang="en"] .restaurant #restaurantSec04 .txtBox {
+  display: flex;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox h2, html[lang="en"] .restaurant #restaurantSec02 .txtBox h2,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox h2, html[lang="en"] .restaurant #restaurantSec04 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+  width: 35%;
+  margin-right: 0;
+  padding: 0 30px;
+  text-align: center;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm01, html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm01,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm01, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm01 {
+  width: 35%;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm01 dt, html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm01 dd, html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm01 dd,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm01 dt, html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm01 dd, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm01 dt, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm01 dd {
+  display: block;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm01 dt, html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm01 dt,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm01 dt, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm01 dt {
+  width: auto;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm01 ul, html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm01 ul,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm01 ul, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm01 ul {
+  margin-top: 10px;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm01 li, html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm01 li,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm01 li, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm01 li {
+  font-size: 0.857rem;
+}
+
+html[lang="en"] .restaurant #restaurantSec01 .txtBox .txtClm02, html[lang="en"] .restaurant #restaurantSec02 .txtBox .txtClm02,
+html[lang="en"] .restaurant #restaurantSec03 .txtBox .txtClm02, html[lang="en"] .restaurant #restaurantSec04 .txtBox .txtClm02 {
+  width: 30%;
+}
+
+html[lang="en"] .restaurant #restaurantSec05 .txtBox .txtClm h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] .access #accessSec01 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] .access #accessSec02 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}
+
+html[lang="en"] .access #accessSec03 .txtBox h2 {
+  font-family: Garamond, Georgia, "Times New Roman", serif;
+}

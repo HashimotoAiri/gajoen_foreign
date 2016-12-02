@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>STAY | MeguroGajoen: A beautiful historic hotel located in central Tokyo near Shibuya and Shinjuku,offering an in-depth experience of Japanese culture and traditional restaurants.</title>
+    <meta name="keywords" content="luxury stay,tatami,Japanese tradtional garden">
+    <meta name="description" content="Meguro Gajoen is a comprehensive hotel with restaurants, wedding events, and banquet halls. In a quiet neighborhood with easy access to Shibuya and Shinjuku, it is a luxurious place to experience all of the traditional Japanese culture and take a step into the Showa Era.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="./images/favicon.ico"> -->
+    <!-- <link rel="apple-touch-icon" href="./images/favicon.png"> -->
+    <link rel="stylesheet" href="../../css/sp.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="../../css/pc.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="../../css/jquery.bxslider.css">
+    <script type='text/javascript' src='../../js/fbparam.js'></script>
+    <script type='text/javascript' src='../../js/fblib.js'></script>
+</head>
+
+<body class="stay02" onload="start(); initialize();">
+
+<header id="header" class="pc">
+	<div class="inner">
+		<h1 class="logo"><img src="../../images/logo_en.png" alt="目黒雅叙園" width="177" height="54"></h1>
+		<nav id="gnav">
+			<ul>
+				<li><a href="../index.html"><img src="../../images/nav01_ch.png" alt="ホーム" width="37" height="28"></a></li>
+				<li><a href="../stay/"><img src="../../images/nav02_ch.png" alt="宿泊" width="26" height="29"></a></li>
+				<li><a href="../restaurant/"><img src="../../images/nav03_ch.png" alt="レストラン" width="69" height="29"></a></li>
+				<li><a href="http://www.megurogajoen.co.jp/wedding/inbound/tokyotokyo/" target="_blank"><img src="../../images/nav04_ch.png" alt="ウエディング" width="73" height="30"></a></li>
+				<li><a href="https://www.megurogajoen.co.jp/inquiry/banquet/p/?code=en" target="_blank"><img src="../../images/nav05_ch.png" alt="会議・展示会" width="79" height="28"></a></li>
+				<li><a href="http://www.megurogajoen.co.jp/event/hinamaturi/" target="_blank"><img src="../../images/nav06_ch.png" alt="百段階段" width="79" height="28"></a></li>
+				<li><a href="../access/"><img src="../../images/nav07_ch.png" alt="アクセス" width="79" height="28"></a></li>
+			</ul>
+		</nav>
+		<div id="link">
+			<ul id="snsLink">
+				<li><a href="https://www.instagram.com/megurogajoen/" target="_blank"><img src="../../images/ico_ins.png" alt="Instagram" width="17" height="17"></a></li>
+				<li><a href="https://www.facebook.com/gajoen/" target="_blank"><img src="../../images/ico_fb.png" alt="Facebook" width="17" height="17"></a></li>
+				<li><a href="https://twitter.com/meguro_gajoen" target="_blank"><img src="../../images/ico_tw.png" alt="Twitter" width="19" height="16"></a></li>
+			</ul>
+			<ul id="lang">
+				<li><a href="../../">JA</a></li>
+				<li><a href="../../en/">EN</a></li>
+				<li><a href="../../ch/">CH</a></li>
+			</ul>
+		</div>
+		<h2 id="tit">
+			<img src="../../images/tit_stay_ch.png" alt="STAY" width="199" height="64">
+		</h2>
+	</div>
+	<p class="arrow"><a href="#container"><img src="../../images/arrow.png" alt="" width="59" height="59"></a></p>
+
+	<div id="stayReserveForm" class="reserveFormLang">
+		<div class="container">
+			<form target="dispoprice" name="idForm">
+				<input type='hidden' name='showPromotions' value='1'>
+				<input type='hidden' name='langue' value='china'><input type='hidden' name='Clusternames' value='ASIAJPHTLMeguroGajoe'><input type='hidden' name='Hotelnames' value='ASIAJPHTLMeguroGajoe'>
+				<div class="formLeft">
+					<div class="formLeftDate">
+						<div class="formLeftDateLabel">到店</div>
+						<div class="formLeftDateInput">
+							<select name='fromyear' onChange='update_departure();' class="inputYear">
+								<option value="0"></option>
+							</select> 年
+							<select name='frommonth' class="inputMonth">
+								<option value='1'>Jan</option>
+								<option value='2'>Feb</option>
+								<option value='3'>Mar</option>
+								<option value='4'>Apr</option>
+								<option value='5'>May</option>
+								<option value='6'>Jun</option>
+								<option value='7'>Jul</option>
+								<option value='8'>Aug</option>
+								<option value='9'>Sept</option>
+								<option value='10'>Oct</option>
+								<option value='11'>Nov</option>
+								<option value='12'>Dec</option>
+							</select> 月
+							<select name='fromday' class="inputDay"> 
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+								<option value='3'>3</option>
+								<option value='4'>4</option>
+								<option value='5'>5</option>
+								<option value='6'>6</option>
+								<option value='7'>7</option>
+								<option value='8'>8</option>
+								<option value='9'>9</option>
+								<option value='10'>10</option>
+								<option value='11'>11</option>
+								<option value='12'>12</option>
+								<option value='13'>13</option>
+								<option value='14'>14</option>
+								<option value='15'>15</option>
+								<option value='16'>16</option>
+								<option value='17'>17</option>
+								<option value='18'>18</option>
+								<option value='19'>19</option>
+								<option value='20'>20</option>
+								<option value='21'>21</option>
+								<option value='22'>22</option>
+								<option value='23'>23</option>
+								<option value='24'>24</option>
+								<option value='25'>25</option>
+								<option value='26'>26</option>
+								<option value='27'>27</option>
+								<option value='28'>28</option>
+								<option value='29'>29</option>
+								<option value='30'>30</option>
+								<option value='31'>31</option>
+							</select> 日
+						</div>
+					</div>
+					<div class="formLeftDate">
+						<div class="formLeftDateLabel">离店</div>
+						<div class="formLeftDateInput">
+							<select name='toyear' onChange='update_departure();' class="inputYear">
+								<option value="0"></option>
+							</select> 年
+							<select name='tomonth' class="inputMonth">
+								<option value='1'>Jan</option>
+								<option value='2'>Feb</option>
+								<option value='3'>Mar</option>
+								<option value='4'>Apr</option>
+								<option value='5'>May</option>
+								<option value='6'>Jun</option>
+								<option value='7'>Jul</option>
+								<option value='8'>Aug</option>
+								<option value='9'>Sept</option>
+								<option value='10'>Oct</option>
+								<option value='11'>Nov</option>
+								<option value='12'>Dec</option>
+							</select> 月
+							<select name='today' class="inputDay"> 
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+								<option value='3'>3</option>
+								<option value='4'>4</option>
+								<option value='5'>5</option>
+								<option value='6'>6</option>
+								<option value='7'>7</option>
+								<option value='8'>8</option>
+								<option value='9'>9</option>
+								<option value='10'>10</option>
+								<option value='11'>11</option>
+								<option value='12'>12</option>
+								<option value='13'>13</option>
+								<option value='14'>14</option>
+								<option value='15'>15</option>
+								<option value='16'>16</option>
+								<option value='17'>17</option>
+								<option value='18'>18</option>
+								<option value='19'>19</option>
+								<option value='20'>20</option>
+								<option value='21'>21</option>
+								<option value='22'>22</option>
+								<option value='23'>23</option>
+								<option value='24'>24</option>
+								<option value='25'>25</option>
+								<option value='26'>26</option>
+								<option value='27'>27</option>
+								<option value='28'>28</option>
+								<option value='29'>29</option>
+								<option value='30'>30</option>
+								<option value='31'>31</option>
+							</select> 日
+						</div>
+					</div>
+				</div>
+				<div class="formRight">
+					<div class="formRightNum">
+						<div class="formRightLabel">
+							宿泊人数
+						</div>
+						<div class="formRightInput">
+							<div>
+								<span>成人</span>
+								<select name="adulteresa" class="selectNum">
+									<option value="0">0</option>
+									<option value="1" selected>1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+								</select>
+							</div>
+							<div>
+								<span>儿童</span>
+								<select name="enfantresa" class="selectNum">
+									<option value="0" selected>0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="formRightCode">
+						<div class="formRightLabel">
+							促销或业务代码
+						</div>
+						<div class="formRightInput">
+							<input type='password' name='AccessCode' value='' class="inputCode">
+						</div>
+					</div>
+				</div>
+				<div class="formBtn">
+					<span class="btnSeek"><input type="button" name="B1" class="button" value="应用条件" onclick='hhotelDispoprice(this.form)'></span>
+					<div class="formSubBtn">
+						<span class="linkCansel"><a href="javascript:;" onClick="hhotelcancel('ASIAJPHTLMeguroGajoe','china');" colspan="2">取消您的预约</a></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</header>
+
+<header id="fixHeader" class="sp">
+	<h1 class="logo"><img src="../../images/logo_en.png" alt="目黒雅叙園" width="177" height="54"></h1>
+	<div id="menuBtn" class="sp"><span></span></div>
+</header>
+<div id="spMv" class="sp">
+	<h2 id="tit">
+		<img src="../../images/tit_stay_ch.png" alt="STAY" width="199" height="64">
+	</h2>
+	<div class="reserve">
+		<p>
+			<a href="javascript:;" onclick='hhotelSearch("ASIAJPHTLMeguroGajoe", "china", "", "", "", "", "&FSTBKNGTrackLink=");'><img src="../../images/btn_reserve.png" alt="全ての宿泊プランを見る" width="330" height="60"></a>
+		</p>
+	</div>
+</div>
+
+<div id="container">
+
+	<div class="container fadein">
+		<p class="catch">在简单中追求清静、自然之美空间</p>
+	</div>
+	<section id="staySec01" class="fadein">
+		<div class="imgBox">
+			<img src="../../images/img_stay02_001.jpg" width="1366" height="370" alt="">
+		</div>
+		<div class="container">
+			<div class="txtBox">
+				<h2>～聚集『和敬清心』的场所～
+					<span>Meguro Gajoen Style</span>
+				</h2>
+				<p>目黑雅叙园，有着繁多日本江户文化的传统美术、工艺品。被镶嵌在设施里的各个角落。对照这样的世界，我们的客房里还有另一个日本审美意识，那就是代表着日本茶道中「清寂悠闲」的茶道精神，意思是将不要的事物除去，去追求「简单中的自然」，提供“清寂”之美的空间。</p>
+				<p>我们的主题----『和敬清心』，是受茶道精神『和敬清寂』这四字的启发，承诺我们要去实践日本人所喜爱的『清静＝清澈纯洁』、『款待之心』，所以将这誓言中的『心』字放入了我们的四字主题里。</p>
+				<p>我们以日本人特有的『款待之心』面向世界各地的顾客，提供您感受日本传统美和日本文化的空间，以及世界一流的服务。</p>
+				<!--<p class="noKerning"><img src="../../images/img_stay02_002.gif" alt="和・和合、互いに楽しもうという心　敬・他を敬愛する心　清・清潔、清廉、まわりも自らも清らかであること　心・私たちのホスピタリティ（おもてなしの心）の誓い" width="760" height="300"></p>-->
+			</div>
+		</div>
+	</section>
+
+	<section id="staySec02">
+		<div id="staySec02_01" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<ul id="stayBxslider01" class="bxslider">
+						<li><img src="../../images/img_stay02_slide01_001.jpg" alt="和室" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide01_002.jpg" alt="和室" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide01_003.jpg" alt="和室" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide01_004.jpg" alt="和室" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide01_005.jpg" alt="和室" width="665" height="384"></li>
+					</ul>
+				</div>
+				<div class="txtBox">
+					<div class="txtBoxInner">
+						<h2>
+							日式房间<span class="letterSpace"></span>
+							<span class="subTit">JAPANESE STYLE ROOM</span>
+						</h2>
+						<!--<p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br>
+							70㎡</p>-->
+						<div id="stayBxPager01" class="bx-pager">
+							<a data-slide-index="0" href=""><img src="../../images/thumb_stay/img_stay02_thumb01_001.jpg" alt="和室"></a>
+							<a data-slide-index="1" href=""><img src="../../images/thumb_stay/img_stay02_thumb01_002.jpg" alt="和室"></a>
+							<a data-slide-index="2" href=""><img src="../../images/thumb_stay/img_stay02_thumb01_003.jpg" alt="和室"></a>
+							<a data-slide-index="3" href=""><img src="../../images/thumb_stay/img_stay02_thumb01_004.jpg" alt="和室"></a>
+							<a data-slide-index="4" href=""><img src="../../images/thumb_stay/img_stay02_thumb01_005.jpg" alt="和室"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="staySec02_02" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<ul id="stayBxslider02" class="bxslider">
+						<li><img src="../../images/img_stay02_slide02_001.jpg" alt="エグゼクティブスイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide02_002.jpg" alt="エグゼクティブスイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide02_003.jpg" alt="エグゼクティブスイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide02_004.jpg" alt="エグゼクティブスイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide02_005.jpg" alt="エグゼクティブスイート" width="665" height="384"></li>
+					</ul>
+				</div>
+				<div class="txtBox">
+					<div class="txtBoxInner">
+						<h2>
+							行政套房<span class="letterSpace"></span>
+							<span class="subTit">EXECUTIVE SUITE</span>
+						</h2>
+						<!--<p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br>
+							70㎡</p>-->
+						<div id="stayBxPager02" class="bx-pager">
+							<a data-slide-index="0" href=""><img src="../../images/thumb_stay/img_stay02_thumb02_001.jpg" alt="エグゼクティブスイート"></a>
+							<a data-slide-index="1" href=""><img src="../../images/thumb_stay/img_stay02_thumb02_002.jpg" alt="エグゼクティブスイート"></a>
+							<a data-slide-index="2" href=""><img src="../../images/thumb_stay/img_stay02_thumb02_003.jpg" alt="エグゼクティブスイート"></a>
+							<a data-slide-index="3" href=""><img src="../../images/thumb_stay/img_stay02_thumb02_004.jpg" alt="エグゼクティブスイート"></a>
+							<a data-slide-index="4" href=""><img src="../../images/thumb_stay/img_stay02_thumb02_005.jpg" alt="エグゼクティブスイート"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="staySec02_03" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<ul id="stayBxslider03" class="bxslider">
+						<li><img src="../../images/img_stay02_slide03_001.jpg" alt="コーナースイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide03_002.jpg" alt="コーナースイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide03_003.jpg" alt="コーナースイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide03_004.jpg" alt="コーナースイート" width="665" height="384"></li>
+						<li><img src="../../images/img_stay02_slide03_005.jpg" alt="コーナースイート" width="665" height="384"></li>
+					</ul>
+				</div>
+				<div class="txtBox">
+					<div class="txtBoxInner">
+						<h2>
+							转角套房
+							<span class="subTit">CORNER SUITE</span>
+						</h2>
+						<!--<p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br>
+							70㎡</p>-->
+						<div id="stayBxPager03" class="bx-pager">
+							<a data-slide-index="0" href=""><img src="../../images/thumb_stay/img_stay02_thumb03_001.jpg" alt="コーナースイート"></a>
+							<a data-slide-index="1" href=""><img src="../../images/thumb_stay/img_stay02_thumb03_002.jpg" alt="コーナースイート"></a>
+							<a data-slide-index="2" href=""><img src="../../images/thumb_stay/img_stay02_thumb03_003.jpg" alt="コーナースイート"></a>
+							<a data-slide-index="3" href=""><img src="../../images/thumb_stay/img_stay02_thumb03_004.jpg" alt="コーナースイート"></a>
+							<a data-slide-index="4" href=""><img src="../../images/thumb_stay/img_stay02_thumb03_005.jpg" alt="コーナースイート"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!--<section id="staySec03">
+		<div id="staySec03_01" class="fadein">
+			<div class="container">
+				<h2>茶道とは『おもてなしの心』</h2>
+				<p>その日本人が持つ精神を千利休は『和敬静寂』と表現した。<br>この一句四文字の真意を体得し実践する事が茶道の本文とされる。<br>私たちは日本人ならではの『おもてなしの心』で国内外のゲストに日本の文化を感じて頂ける空間とサービスを提供します。</p>
+			</div>
+		</div>
+		<div id="staySec03_02" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<img src="../../images/img_stay02_003.jpg" alt="" width="300" height="305">
+				</div>
+				<div class="txtBox">
+					<h3>「心地よさ」をテーマに。<br>
+						パリのスパから生まれたオムニサンス・パリを採用。</h3>
+					<p>シャンプー&コンディショナー、ソープ、ハンドクリーム、ボディローション、<br>基礎化粧品セットの全てが、白茶と緑茶をベースに、作られている。<br>主要成分の白茶、緑茶は、その独特の癒しの香りだけでなく、<br>抗酸化作用で知られており、またビタミン、ミネラル、ポリフェノールが<br>豊富に含まれている事で、大気汚染から肌を保護してくれる。<br>オムニサンスの製品は、パラベン、シリコン、ミネラルオイル、着色料を<br>一切使用していない。<br>また、バスタオル・ハンドタオルは今治タオルをご用意。<br>厳選された綿のみ、鉄分が少ない軟水を使用して晒し工程を行うため<br>素材本来の柔らかさと吸水性を活かしている。</p>
+				</div>
+			</div>
+		</div>
+		<div id="staySec03_03" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<img src="../../images/img_stay02_004.jpg" alt="" width="190" height="189">
+				</div>
+				<div class="txtBox">
+					<h3>OMOTENASHIのお茶。</h3>
+					<p>チェックインの際に提供するお茶には、<br>自然のまま、安全を考え、静岡産の無農薬の煎茶をご用意。<br>お茶菓子には地元目黒に店舗を構え47年の歴史のある<br>老舗和菓子屋「風林堂」の上生菓子で季節感をご堪能ください。</p>
+				</div>
+			</div>
+		</div>
+		<div id="staySec03_04" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<img src="../../images/img_stay02_005.jpg" alt="" width="255" height="303">
+				</div>
+				<div class="txtBox">
+					<h3>ミニバーで快適に。</h3>
+					<p>ハードリカーには、Vodka、GIN、Rumと、ウイスキーはジャパニーズウイスキーの「竹鶴」、<br>ワインも日本産に拘り、白ワインは「シャトーメルシャン長野シャルドネ」、<br>赤ワインには「ルバイヤード　ルージュ」をセレクト。<br>日本酒については、渡風亭とリンクして酒SAMURAIセレクトのバリエーション豊富な<br>日本酒をルームサービスでお楽しみいただけます。<br>また、スナックにはお酒にもお茶にも合う目黒の「御門屋」のおかきをご用意。</p>
+				</div>
+			</div>
+		</div>
+	</section>-->
+
+	<section id="staySec04" class="fadein">
+		<div class="container">
+			<div class="imgBox">
+				<img src="../../images/img_stay02_006.jpg" alt="" width="436" height="290">
+			</div>
+			<div class="txtBox">
+				<h2>80㎡以上宽敞舒适的空间</h2>
+				<p>「能提供一个让您身心放松、与重要的人无拘无束地渡过快乐时光的客房」是我们的愿望，为了实现这个愿望，我们特意准备了80㎡以上的空间。
+客房的设计是以茶室的样式展现，将四季的情景扩散在地板周围。
+一进房间与日本茶室一样，一束季节的花草作为装饰安静悠然的插在花瓶中，更加舒适的是，我们使用了茶里提取的精华物，用茶的香味带给您治愈效果外、还能保护皮肤的功效。
+另外，以手感、和能温柔呵护肌肤优先，以日本顶级毛巾品牌----今治毛巾为首精心挑选，采用了使用上等亚麻布原材料的毛巾。
+我们发自内心的希望，能将您在目黑雅叙园逗留的时光，以日本特有的款待之心为您献上值得留念的回忆。</p>	
+			</div>
+		</div>
+	</section>
+
+	<!--<section id="staySec05">
+		<div id="staySec05_01" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<ul id="stayBxslider04" class="bxslider">
+						<li><img src="../../images/img_stay02_slide01_001.jpg" alt="" width="665" height="370"></li>
+						<li><img src="../../images/img_stay02_slide01_002.jpg" alt=""></li>
+						<li><img src="../../images/img_stay02_slide01_003.jpg" alt=""></li>
+						<li><img src="../../images/img_stay02_slide01_004.jpg" alt=""></li>
+						<li><img src="../../images/img_stay02_slide01_005.jpg" alt=""></li>
+					</ul>
+					<div id="stayBxPager04" class="bx-pager">
+						<a data-slide-index="0" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="1" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="2" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="3" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="4" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="5" href=""><img src="http://placehold.it/45x45" alt=""></a>
+					</div>
+				</div>
+				<div class="txtBox">
+					<div class="inner">
+						<h2>
+							和室
+							<span>JAPANESE STYLE ROOM</span>
+						</h2>
+						<p>都心にいながら高級旅館の趣きを。<br>檜のジェットバス、スチームサウナも完備し、<br>落ち着きを感じる“和”のしつらえです。</p>
+						<p><a href="http://www.megurogajoen.co.jp/rooms/intro/wa.html/" target="_blank" class="btn01">パノラマで見る<span class="blank"></span></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="staySec05_02" class="fadein">
+			<div class="container">
+				<div class="imgBox">
+					<ul id="stayBxslider05" class="bxslider">
+						<li><img src="../../images/img_stay02_slide01_001.jpg" alt="" width="665" height="370"></li>
+						<li><img src="../../images/img_stay02_slide01_002.jpg" alt=""></li>
+						<li><img src="../../images/img_stay02_slide01_003.jpg" alt=""></li>
+						<li><img src="../../images/img_stay02_slide01_004.jpg" alt=""></li>
+						<li><img src="../../images/img_stay02_slide01_005.jpg" alt=""></li>
+					</ul>
+					<div id="stayBxPager05" class="bx-pager">
+						<a data-slide-index="0" href=""><img src="../../images/img_stay02_slide05_001.jpg" alt=""></a>
+						<a data-slide-index="1" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="2" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="3" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="4" href=""><img src="http://placehold.it/45x45" alt=""></a>
+						<a data-slide-index="5" href=""><img src="http://placehold.it/45x45" alt=""></a>
+					</div>
+				</div>
+				<div class="txtBox">
+					<div class="inner">
+						<h2>
+							和洋室
+							<span>WESTERN & JAPANESE STYLE ROOM</span>
+						</h2>
+						<p>洋室の一角に琉球畳エリアを設け、和と洋が融合した空間。<br>1室4名様まで利用でき、ご家族・ご友人などの<br>グループ利用にもおすすめです。</p>
+						<p><a href="http://www.megurogajoen.co.jp/rooms/intro/wayou.html/" target="_blank" class="btn01">パノラマで見る<span class="blank"></span></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>-->
+
+	<!--<section id="staySec06" class="fadein">
+		<div class="container">
+			<div class="txtBox">
+				<span class="ico"></span>
+				<h2>1日の活力は朝食から。</h2>
+				<p>目黒雅叙園での朝食は、お客様の目の前で<br>シェフ自ら卵料理を調理いたします。<br>新鮮な野菜や果物をふんだんに使用し、その季節で<br>もっとも美味しい素材を使った贅沢なジュースもご用意。<br>30種類のメニューが堪能できる<br>目黒雅叙園自慢の朝食です。</p>
+			</div>
+		</div>
+	</section>-->
+
+	<!--<section id="instagram" class="fadein">
+		<h2>INSTAGRAM</h2>
+		<div class="inner">
+			Instagramのサムネイルが表示されます
+			<p class="tar"><a href="" target="_blank" class="btn01">MORE<span class="blank"></span></a></p>
+		</div>
+	</section>-->
+
+	<div id="googleMap" class="fadein">
+	</div>
+</div>
+
+<footer id="footer">
+	<p id="copy">
+		Copyright&copy; K.K.Meguro Gajoen. All Rights Reserved.
+	</p>
+	<p id="goTop"><a href="#"><img src="../../images/goTop.png" alt=""></a></p>
+</footer>
+
+<nav id="spNavi" class="sp">
+    <ul id="menuLink">
+		<li><a href="../index.html"><img src="../../images/nav01_ch.png" alt="ホーム" width="37" height="28"></a></li>
+		<li><a href="../stay/"><img src="../../images/nav02_ch.png" alt="宿泊" width="26" height="29"></a></li>
+		<li><a href="../restaurant/"><img src="../../images/nav03_ch.png" alt="レストラン" width="69" height="29"></a></li>
+		<li><a href="http://www.megurogajoen.co.jp/wedding/inbound/tokyotokyo/" target="_blank"><img src="../../images/nav04_ch.png" alt="ウエディング" width="73" height="30"></a></li>
+		<li><a href="https://www.megurogajoen.co.jp/inquiry/banquet/p/?code=en" target="_blank"><img src="../../images/nav05_ch.png" alt="会議・展示会" width="79" height="28"></a></li>
+		<li><a href="http://www.megurogajoen.co.jp/event/hinamaturi/" target="_blank"><img src="../../images/nav06_ch.png" alt="百段階段" width="79" height="28"></a></li>
+		<li><a href="../access/"><img src="../../images/nav07_ch.png" alt="アクセス" width="79" height="28"></a></li>
+    </ul>
+    <ul id="snsLink">
+		<li><a href="https://www.instagram.com/megurogajoen/" target="_blank"><img src="../../images/ico_ins.png" alt="Instagram" width="17" height="17"></a></li>
+		<li><a href="https://www.facebook.com/gajoen/" target="_blank"><img src="../../images/ico_fb.png" alt="Facebook" width="17" height="17"></a></li>
+		<li><a href="https://twitter.com/meguro_gajoen" target="_blank"><img src="../../images/ico_tw.png" alt="Twitter" width="19" height="16"></a></li>
+	</ul>
+	<ul id="lang">
+		<li><a href="../../index.html">JA</a></li>
+		<li><a href="../../en/">EN</a></li>
+		<li><a href="../../ch/">CH</a></li>
+	</ul>
+</nav>
+<!-- /spNavi -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/jquery.bxslider.min.js"></script>
+<script src="//maps.google.com/maps/api/js?key=AIzaSyAx0PA0RPWDoLp8nv-YuaEeIElrX7xaIWY&language=zh-CN"></script>
+
+<script>
+$(document).ready(function(){
+
+	// 予約フォームの切り替え
+	function reserveForm(){
+		var $reserveForm = $('#stayReserveForm');
+		function reserveFormChange(){
+			var windowHeight = $(window).height();
+			var scrollTop = $(window).scrollTop();
+			if (scrollTop > windowHeight) {
+				if (!$reserveForm.is('.fixed')){
+					$reserveForm.stop().hide().addClass('fixed').fadeTo('', 0.7);
+					hoverWatch();
+				}
+			} else {
+				if ($reserveForm.is('.fixed')){
+					$reserveForm.stop().removeClass('fixed hover').css({'opacity':'1'});
+					$(window).off('.calHover');
+				}
+			}
+		};
+		reserveFormChange();
+		$(window).on('scroll',function (){
+			reserveFormChange();
+		});
+		function hoverWatch(){
+			$reserveForm.off('mouseenter').one('mouseenter',function(){
+				if (!$reserveForm.is('.hover')){
+					$reserveForm.stop(true,true).addClass('hover');
+					leaveWatch();
+				}
+			})
+		}
+		function leaveWatch(){
+			var count = 0;
+			$(window).off('.calHover').on('mousemove.calHover',function(){
+				if (!$reserveForm.is(':hover')){
+					if(count>=2){
+						count = 0;
+						$(window).off('.calHover');
+						$reserveForm.stop().removeClass('hover');
+						hoverWatch();
+					} else {
+						count++;
+					}
+				}
+				else {
+					count = 0;
+				}
+			})
+		}
+	}
+	reserveForm();
+
+	//Slider
+	$('#stayBxslider01').bxSlider({
+		controls: false,
+		mode: 'fade',
+		auto: true,
+		speed: 500,
+		//pause: 1500,
+		pagerCustom: '#stayBxPager01'
+	});
+	$('#stayBxslider02').bxSlider({
+		controls: false,
+		mode: 'fade',
+		auto: true,
+		speed: 500,
+		pagerCustom: '#stayBxPager02'
+	});
+	$('#stayBxslider03').bxSlider({
+		controls: false,
+		mode: 'fade',
+		auto: true,
+		speed: 500,
+		pagerCustom: '#stayBxPager03'
+	});
+	$('#stayBxslider04').bxSlider({
+		controls: false,
+		mode: 'fade',
+		auto: true,
+		speed: 500,
+		pagerCustom: '#stayBxPager04'
+	});
+	$('#stayBxslider05').bxSlider({
+		controls: false,
+		mode: 'fade',
+		auto: true,
+		speed: 500,
+		pagerCustom: '#stayBxPager05'
+	});
+
+});
+
+function initialize() {
+  var latlng = new google.maps.LatLng(35.632019, 139.713535);
+  var myOptions = {
+    zoom: 18,/*拡大比率*/
+    center: latlng,/*表示枠内の中心点*/
+    scrollwheel: false,
+    mapTypeControlOptions: { mapTypeIds: ['gajoen', google.maps.MapTypeId.ROADMAP] }/*表示タイプの指定*/
+  };
+  var map = new google.maps.Map(document.getElementById('googleMap'), myOptions);
+
+  /*アイコン設定▼*/
+  var icon = new google.maps.MarkerImage('../../images/mappin.png',
+    new google.maps.Size(64,64),/*アイコンサイズ設定*/
+    new google.maps.Point(0,0)/*アイコン位置設定*/
+    );
+  var markerOptions = {
+    position: latlng,
+    map: map,
+    icon: icon,
+    title: '目黒雅叙園'
+  };
+  var marker = new google.maps.Marker(markerOptions);
+
+  /*取得スタイルの貼り付け*/
+  var styleOptions =
+[
+  {
+    "stylers": [
+      { "visibility": "simplified" },
+      { "weight": 0.1 },
+      { "saturation": -100 }
+    ]
+  }
+];
+  var styledMapOptions = { name: '目黒雅叙園' }
+  var sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+  map.mapTypes.set('gajoen', sampleType);
+  map.setMapTypeId('gajoen');
+}
+</script>
+<script type='text/javascript' src='../../js/fbfulltrack.js'></script>
+
+</body>
+</html>
