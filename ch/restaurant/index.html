@@ -358,7 +358,6 @@
 <script>
 $(document).ready(function(){
 
-	// 予約フォームの切り替え
 	function reserveForm(){
 		var $reserveForm = $('#restaurantReserveForm');
 		var $body = $('body');
@@ -366,10 +365,16 @@ $(document).ready(function(){
 			var windowHeight = $(window).height();
 			var scrollTop = $(window).scrollTop();
 			var $target = $('.pika-single');
+			var $calTarget = $('#reservation_start_date');
 			if (scrollTop > windowHeight) {
+				var pikaHeight = $calTarget.innerHeight();
+				$target.css({
+					'position': 'fixed',
+					'top': $calTarget.position().top + pikaHeight - 1,
+					'left': $calTarget.position().left
+				});
 				if (!$reserveForm.is('.fixed')){
-					$reserveForm.stop().hide().addClass('fixed').fadeTo('',0.7);
-					hoverWatch();
+					$reserveForm.stop().addClass('fixed');
 					$body.addClass('formFloted');
 					if ($target.is(":visible")){
 						$body.trigger('click');
@@ -377,8 +382,7 @@ $(document).ready(function(){
 				}
 			} else {
 				if ($reserveForm.is('.fixed')){
-					$reserveForm.removeClass('fixed hover').css({'opacity':'1'});
-					$(window).off('.calHover');
+					$reserveForm.removeClass('fixed');
 					$body.removeClass('formFloted');
 					if ($target.is(":visible")){
 						$body.trigger('click');
@@ -390,21 +394,6 @@ $(document).ready(function(){
 		$(window).on('scroll',function (){
 			reserveFormChange();
 		});
-
-		function hoverWatch(){
-			var $target = $('.pika-single');
-			$(window).off('.calHover').on('mousemove.calHover',function(){
-				if (($target.is(':visible') || ($reserveForm.is(':hover')))){
-					if (!$reserveForm.is('.hover')){
-						$reserveForm.stop(true,true).addClass('hover');
-					}
-				}
-				else {
-					$reserveForm.removeClass('hover');
-				}
-			})
-		}
-
 	}
 	reserveForm();
 

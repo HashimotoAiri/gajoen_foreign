@@ -1281,135 +1281,9 @@ a:hover img {
 	position: fixed;
 	top: 0;
 	right: 0;
+	left: 0;
 	bottom: auto;
-	width: auto;
-	font-size: $f13;
-	font-weight: bold;
-
-	&.hover {
-		transition: opacity 0.5s;
-		opacity: 1 !important;
-	}
-
-	input,select {
-		height: 20px;
-		padding: 0 5px 0;
-		font-size: $f13;
-		line-height: 18px;
-	}
-	select {
-		padding-right: 22px;
-	}
-	input[type="text"] {
-		line-height: 18px !important;
-	}
-	@-moz-document url-prefix(){
-		select {
-			padding: 0 22px 0 2px;
-		}
-	}
-	input[type="checkbox"]:checked + label::after {
-		top: 7px;
-	}
-	form {
-		flex-direction: column;
-	}
-	.formLeft {
-		flex-basis: auto;
-		padding: 20px 20px 15px;
-	}
-	.formRight {
-		width: 100%;
-		padding: 3px 20px 12px;
-		br {
-			display: none;
-		}
-	}
-	.formLeftDate {
-		flex-direction: column;
-		margin-bottom: 12px;
-		.formLeftDateLabel {
-			width: auto;
-			margin-bottom: 5px;
-		}
-	}
-	.formLeftNum {
-		display: flex;
-		.formLeftNumLabel {
-			width: auto;
-			span:first-of-type {
-				margin-right: 14px;
-			}
-			span:nth-of-type(2) {
-				margin: 0 5px 0 auto;
-			}
-		}
-		.formLeftNumInput {
-		}
-	}
-	.inputYear {
-		width: 60px;
-	}
-	.inputMonth,
-	.inputDate {
-		width: 34px;
-	}
-	.selectNum {
-		width: 62px;
-	}
-	.btnCalendar {
-		display: block;
-		margin-top: 2px;
-	}
-	.icoCalendar {
-		margin: -4px 0 0 0;
-	}
-	.btnSeek {
-		display: block;
-		margin-bottom: 12px;
-	}
-	.btnSeek input {
-		width: 100%;
-		height: 30px;
-		background: url(../images/ico_search.png) no-repeat 48px 8px, -moz-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-		background: url(../images/ico_search.png) no-repeat 48px 8px, -webkit-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-		background: url(../images/ico_search.png) no-repeat 48px 8px, -ms-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-		font-family: inherit;
-		font-size: $f18;
-	}
-	.btnCansel {
-		display: block;
-	}
-	.btnCansel input {
-		padding: 0;
-		font-family: inherit;
-		font-size: $f12;
-	}
-	.btnCansel::before {
-		font-size: $f8;
-		line-height: 16px;
-	}
-	.formBtn {
-		width: 100%;
-		height: auto;
-		margin-left: 0;
-	}
-	.formBtn a {
-		padding: 12px 12px 12px 106px;
-		background: #701b19 url(../images/ico_bed.png) no-repeat 47px center;
-		font-size: $f14;
-		font-weight: bold;
-		line-height: (18 / 14);
-		text-align: left;
-	}
-}
-
-@media all and (-ms-high-contrast:none){
-	.reserveForm.fixed {
-		.btnSeek input {
-			padding-top: 8px;
-		}
-	}
+	width: 100%;
 }
 
 /************************************************
@@ -1676,292 +1550,181 @@ a:hover img {
 	reserveForm(restaurant)
 ************************************************ */
 
-	#restaurantReserveForm {
-		.container {
-			display: flex;
-			flex-direction: column;
-		}
-		#tc-widget {
-			display: block;
-			width: 100%;
-			height: auto;
-			margin: 0;
-			padding: 30px 0;
-			font-family: inherit;
-	
-			.tc-header {
-				display: none;
-			}
-			.tc-body {
-				background: transparent;
-				height: auto;
-				padding: 0;
-				border: 0;
-	
-				form {
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-				}
-			}
-			.tc-content {
-				display: flex;
-	
-				.tc-date {
-					display: block;
-					order: 1;
-					margin: 0 10px 0 0;
-					&:before {
-						content: "ご利用日時";
-						margin-right: 6px;
-					}
-					input {
-						width: 145px;
-						background: #fff url(../images/ico_carender02.png) no-repeat right 5px center;
-					}
-				}
-				.tc-time {
-					display: block;
-					order: 2;
-					margin: 0 20px 0 0;
-					select {
-						width: 80px;
-					}
-				}
-				.tc-ppl {
-					display: block;
-					order: 3;
-					margin: 0 20px 0 0;
-					&::before {
-						content: "ご利用人数";
-						margin-right: 6px;
-					}
-					&::after {
-						content: "様";
-						margin-left: 6px;
-					}
-					select {
-						width: 80px;
-					}
-				}
-				.tc-shop {
-					display: block;
-					order: 4;
-					margin: 0;
-					&::before {
-						content: "ご利用店舗";
-						margin-right: 6px;
-					}
-					select {
-						width: 200px;
-					}
-				}
-				.tc-date::before,
-				.tc-time::before,
-				.tc-ppl::before,
-				.tc-shop::before {
-					display: inline-block;
-				}
-				.tc-icon {
-					display: none;
-				}
-				.tc-wrap-input {
-					padding: 0;
-					vertical-align: top;
-				}
-			}
-			.tc-wrap-book {
-				display: block;
-				margin: 0;
-				text-align: right;
-				input[type="submit"] {
-					width: 215px;
-					height: 38px;
-					border: none;
-					border-radius: 7px;
-					background: url(../images/ico_search.png) no-repeat 48px 12px, -moz-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-					background: url(../images/ico_search.png) no-repeat 48px 12px, -webkit-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-					background: url(../images/ico_search.png) no-repeat 48px 12px, -ms-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-					font-family: inherit;
-					font-size: $f18;
-					font-weight: bold;
-					text-indent: 20px;
-					letter-spacing: 4px;
-					text-shadow: none;
-					cursor: pointer;
-				}
-			}
-			input,select {
-				float: none;
-				height: 30px;
-				margin: -3px 0 0;
-				padding: 0 10px 0;
-				border: 1px solid #9d9d9d;
-				outline: 0;
-				border-radius: 0px;
-				box-sizing: border-box;
-				font-family: sans-serif;
-				font-size: $f16;
-				color: #000;
-				line-height: 28px;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-			}
-			@-moz-document url-prefix() {
-				select {
-					padding: 0 22px 0 6px;
-					color: transparent !important;
-					text-shadow: 0 0 0 #000 !important;
-				}
-			}
-			input:focus,
-			select:focus {
-				box-shadow: none;
-			}
-			select {
-				padding-right: 22px;
-				background: #fff url(../images/ico_select_arrow.png) no-repeat right 5px center;
-			}
-			input[type="text"] {
-				line-height: 28px !important;
-			}
-			select::-ms-expand{
-				display: none;
-			}
-			input[type="submit"]:hover {
-				opacity: 0.8;
-			}
-		}
+#restaurantReserveForm {
+	.container {
+		display: flex;
+		flex-direction: column;
 	}
-	
-	@media all and (-ms-high-contrast:none){
-		#restaurantReserveForm {
-			#tc-widget .tc-wrap-book input[type="submit"] {
-				padding-top: 8px;
-			}
-		}
-	}
-	
-	#restaurantReserveForm.fixed {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: auto;
-		width: auto;
-		font-size: $f13;
-		font-weight: bold;
-	
-		&.hover {
-			transition: opacity 0.5s;
-			opacity: 1 !important;
-		}
-	
-		.container {
-			display: flex;
-			flex-direction: column;
-		}
-		#tc-widget {
-			padding: 20px 20px 30px;
-	
-			.tc-body {
-				form {
-					flex-direction: column;
-				}
-			}
-			.tc-content {
-				display: flex;
-				flex-flow: wrap;
-				align-items: flex-end;
-				width: 215px;
-				.tc-date {
-					width: 132px;
-					margin: 0 0 0 0;
-					input {
-						width: 100%;
-					}
-				}
-				.tc-time {
-					width: 83px;
-					margin: 0;
-					.tc-wrap-input {
-						width: 100%;
-						padding-left: 5px;
-					}
-					select {
-						width: 100%;
-					}
-				}
-				.tc-ppl {
-					width: 215px;
-					margin: 10px 0 10px;
-					select {
-						width: 80px;
-					}
-				}
-				.tc-shop {
-					width: 215px;
-					margin: 0 0 20px;
-					select {
-						width: 100%;
-					}
-				}
-				.tc-date::before,
-				.tc-time::before,
-				.tc-ppl::before,
-				.tc-shop::before {
-					display: block;
-					margin-bottom: 5px;
-				}
-			}
-	
-			input,select {
-				height: 26px;
-				padding: 0 5px 0;
-				font-size: $f13;
-				line-height: 24px;
-			}
-			select {
-				padding-right: 24px;
-			}
-			input[type="text"] {
-				line-height: 24px !important;
-			}
-			@-moz-document url-prefix(){
-				select {
-					padding: 0 22px 0 2px;
-				}
-			}
-			.tc-wrap-book {
-				width: 215px;
-				input[type="submit"] {
-					width: 100%;
-					height: 30px;
-					background: url(../images/ico_search.png) no-repeat 48px 8px, -moz-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-					background: url(../images/ico_search.png) no-repeat 48px 8px, -webkit-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-					background: url(../images/ico_search.png) no-repeat 48px 8px, -ms-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-					font-family: inherit;
-					font-size: $f18;
-				}
-			}
-		}
-	}
-	
-	@media all and (-ms-high-contrast:none){
-		#restaurantReserveForm.fixed {
-			#tc-widget .tc-wrap-book input[type="submit"] {
-				padding-top: 8px;
-			}
-		}
-	}
-	
-	.formFloted .pika-single {
-		position: fixed !important;
-		top: 46px !important;
-		right: 20px !important;
-		left: auto !important;
-	}
+	#tc-widget {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 30px 0;
+		font-family: inherit;
 
+		.tc-header {
+			display: none;
+		}
+		.tc-body {
+			background: transparent;
+			height: auto;
+			padding: 0;
+			border: 0;
+
+			form {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+		.tc-content {
+			display: flex;
+
+			.tc-date {
+				display: block;
+				order: 1;
+				margin: 0 10px 0 0;
+				&:before {
+					content: "ご利用日時";
+					margin-right: 6px;
+				}
+				input {
+					width: 145px;
+					background: #fff url(../images/ico_carender02.png) no-repeat right 5px center;
+				}
+			}
+			.tc-time {
+				display: block;
+				order: 2;
+				margin: 0 20px 0 0;
+				select {
+					width: 80px;
+				}
+			}
+			.tc-ppl {
+				display: block;
+				order: 3;
+				margin: 0 20px 0 0;
+				&::before {
+					content: "ご利用人数";
+					margin-right: 6px;
+				}
+				&::after {
+					content: "様";
+					margin-left: 6px;
+				}
+				select {
+					width: 80px;
+				}
+			}
+			.tc-shop {
+				display: block;
+				order: 4;
+				margin: 0;
+				&::before {
+					content: "ご利用店舗";
+					margin-right: 6px;
+				}
+				select {
+					width: 200px;
+				}
+			}
+			.tc-date::before,
+			.tc-time::before,
+			.tc-ppl::before,
+			.tc-shop::before {
+				display: inline-block;
+			}
+			.tc-icon {
+				display: none;
+			}
+			.tc-wrap-input {
+				padding: 0;
+				vertical-align: top;
+			}
+		}
+		.tc-wrap-book {
+			display: block;
+			margin: 0;
+			text-align: right;
+			input[type="submit"] {
+				width: 215px;
+				height: 38px;
+				border: none;
+				border-radius: 7px;
+				background: url(../images/ico_search.png) no-repeat 48px 12px, -moz-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
+				background: url(../images/ico_search.png) no-repeat 48px 12px, -webkit-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
+				background: url(../images/ico_search.png) no-repeat 48px 12px, -ms-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
+				font-family: inherit;
+				font-size: $f18;
+				font-weight: bold;
+				text-indent: 20px;
+				letter-spacing: 4px;
+				text-shadow: none;
+				cursor: pointer;
+			}
+		}
+		input,select {
+			float: none;
+			height: 30px;
+			margin: -3px 0 0;
+			padding: 0 10px 0;
+			border: 1px solid #9d9d9d;
+			outline: 0;
+			border-radius: 0px;
+			box-sizing: border-box;
+			font-family: sans-serif;
+			font-size: $f16;
+			color: #000;
+			line-height: 28px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+		@-moz-document url-prefix() {
+			select {
+				padding: 0 22px 0 6px;
+				color: transparent !important;
+				text-shadow: 0 0 0 #000 !important;
+			}
+		}
+		input:focus,
+		select:focus {
+			box-shadow: none;
+		}
+		select {
+			padding-right: 22px;
+			background: #fff url(../images/ico_select_arrow.png) no-repeat right 5px center;
+		}
+		input[type="text"] {
+			line-height: 28px !important;
+		}
+		select::-ms-expand{
+			display: none;
+		}
+		input[type="submit"]:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+@media all and (-ms-high-contrast:none){
+	#restaurantReserveForm {
+		#tc-widget .tc-wrap-book input[type="submit"] {
+			padding-top: 8px;
+		}
+	}
+}
+
+#restaurantReserveForm.fixed {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: auto;
+	width: 100%;
+}
 
 /************************************************
 	access
@@ -2305,111 +2068,14 @@ html[lang="zh-CN"] {
 			opacity: 0.8;
 		}
 	}
-	
+
 	#stayReserveForm.fixed {
 		position: fixed;
 		top: 0;
 		right: 0;
+		left: 0;
 		bottom: auto;
-		width: auto;
-		padding: 20px;
-		font-size: $f13;
-		font-weight: bold;
-	
-		&.hover {
-			transition: opacity 0.5s;
-			opacity: 1 !important;
-		}
-	
-		input,select {
-			height: 20px;
-			padding: 0 5px 0;
-			font-size: $f13;
-			line-height: 18px;
-		}
-		select {
-			padding-right: 22px;
-		}
-		input[type="text"] {
-			line-height: 18px !important;
-		}
-		@-moz-document url-prefix(){
-			select {
-				padding: 0 22px 0 2px;
-			}
-		}
-		form {
-			flex-direction: column;
-			align-items: stretch;
-		}
-		.formLeft {
-		}
-		.formRight {
-			margin-bottom: 10px;
-		}
-		.formLeftDate {
-			flex-direction: column;
-			margin-bottom: 12px;
-			.formLeftDateLabel {
-				width: auto;
-				margin-bottom: 2px;
-			}
-		}
-		.formRightNum,
-		.formRightCode {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			width: auto;
-			margin-bottom: 12px;
-			.formRightLabel {
-				width: auto;
-				margin-bottom: 2px;
-			}
-			.formRightInput {
-				width: auto;
-			}
-		}
-		.formRightNum .formRightInput {
-			display: flex;
-			justify-content: space-between;
-		}
-		.inputYear {
-			width: 70px;
-		}
-		.inputMonth {
-			width: 60px;
-		}
-		.inputDate {
-			width: 34px;
-		}
-		.selectNum {
-			width: 76px;
-		}
-		.btnSeek {
-			display: block;
-			margin-bottom: 12px;
-		}
-		.btnSeek input {
-			width: 100%;
-			height: 30px;
-			background: url(../images/ico_search.png) no-repeat 48px 7px, -moz-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-			background: url(../images/ico_search.png) no-repeat 48px 7px, -webkit-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-			background: url(../images/ico_search.png) no-repeat 48px 7px, -ms-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-			font-family: inherit;
-			font-size: $f18;
-		}
-		.formBtn {
-			width: 100%;
-			height: auto;
-			margin-left: 0;
-			.linkCansel a {
-				font-size: $f12;
-			}
-			.linkCansel::before{
-				line-height: 20px;
-			}
-		}
+		width: 100%;
 	}
 
 	/************************************************
@@ -2478,30 +2144,30 @@ html[lang="zh-CN"] {
 		reserveForm(restaurant)
 	************************************************ */
 	
-		#restaurantReserveForm {
-			#tc-widget {
-				.tc-content {
-					.tc-date {
-						&:before {
-							content: "的日期和时间";
-						}
+	#restaurantReserveForm {
+		#tc-widget {
+			.tc-content {
+				.tc-date {
+					&:before {
+						content: "的日期和时间";
 					}
-					.tc-ppl {
-						&::before {
-							content: "人数";
-						}
-						&::after {
-							display: none;
-						}
+				}
+				.tc-ppl {
+					&::before {
+						content: "人数";
 					}
-					.tc-shop {
-						&::before {
-							content: "餐厅";
-						}
+					&::after {
+						display: none;
+					}
+				}
+				.tc-shop {
+					&::before {
+						content: "餐厅";
 					}
 				}
 			}
 		}
+	}
 
 	/************************************************
 		access
@@ -2777,117 +2443,16 @@ html[lang="en"] {
 			opacity: 0.8;
 		}
 	}
-	
+
 	#stayReserveForm.fixed {
 		position: fixed;
 		top: 0;
 		right: 0;
+		left: 0;
 		bottom: auto;
-		width: auto;
-		padding: 20px;
-		font-size: $f12;
-		font-weight: bold;
-	
-		&.hover {
-			transition: opacity 0.5s;
-			opacity: 1 !important;
-		}
-	
-		input,select {
-			height: 20px;
-			padding: 0 5px 0;
-			font-size: $f13;
-			line-height: 18px;
-		}
-		select {
-			padding-right: 22px;
-		}
-		input[type="text"] {
-			line-height: 18px !important;
-		}
-		@-moz-document url-prefix(){
-			select {
-				padding: 0 22px 0 2px;
-			}
-		}
-		form {
-			flex-direction: column;
-			align-items: stretch;
-		}
-		.formLeft {
-		}
-		.formRight {
-			margin-bottom: 10px;
-		}
-		.formLeftDate {
-			flex-direction: column;
-			margin-bottom: 12px;
-			.formLeftDateLabel {
-				width: auto;
-				margin-bottom: 2px;
-			}
-		}
-		.formRightNum,
-		.formRightCode {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			width: auto;
-			margin-bottom: 12px;
-			.formRightLabel {
-				width: auto;
-				margin-bottom: 2px;
-			}
-			.formRightInput {
-				width: auto;
-			}
-		}
-		.formRightNum .formRightInput {
-			display: flex;
-			justify-content: space-between;
-
-			div:first-child {
-				margin-right: 10px;
-			}
-		}
-		.inputYear {
-			width: 70px;
-		}
-		.inputMonth {
-			width: 60px;
-		}
-		.inputDate {
-			width: 34px;
-		}
-		.selectNum {
-			width: 60px;
-		}
-		.btnSeek {
-			display: block;
-			margin-bottom: 12px;
-		}
-		.btnSeek input {
-			width: 100%;
-			height: 30px;
-			background: url(../images/ico_search.png) no-repeat 48px 7px, -moz-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-			background: url(../images/ico_search.png) no-repeat 48px 7px, -webkit-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-			background: url(../images/ico_search.png) no-repeat 48px 7px, -ms-linear-gradient( 90deg, rgb(209,182,161) 50%, rgb(191,164,148) 50%);
-			font-family: inherit;
-			font-size: $f18;
-		}
-		.formBtn {
-			width: 100%;
-			height: auto;
-			margin-left: 0;
-			.linkCansel a {
-				font-size: $f12;
-			}
-			.linkCansel::before{
-				line-height: 20px;
-			}
-		}
+		width: 100%;
 	}
-
+	
 	/************************************************
 		restaurant
 	************************************************ */

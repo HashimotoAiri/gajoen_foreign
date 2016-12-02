@@ -472,8 +472,7 @@ $(document).ready(function(){
 			var scrollTop = $(window).scrollTop();
 			if (scrollTop > windowHeight) {
 				if (!$reserveForm.is('.fixed')){
-					$reserveForm.stop().hide().addClass('fixed').fadeTo('', 0.7);
-					hoverWatch();
+					$reserveForm.stop().addClass('fixed');
 					if (!$target.is(":empty") && $target.is(":visible")){
 						$('#__calid_btn_close').trigger('click');
 						$(':focus').blur();
@@ -481,8 +480,7 @@ $(document).ready(function(){
 				}
 			} else {
 				if ($reserveForm.is('.fixed')){
-					$reserveForm.stop().removeClass('fixed hover').css({'opacity':'1'});
-					$(window).off('.calHover');
+					$reserveForm.stop().removeClass('fixed');
 					if (!$target.is(":empty") && $target.is(":visible")){
 						$('#__calid_btn_close').trigger('click');
 						$(':focus').blur();
@@ -494,18 +492,6 @@ $(document).ready(function(){
 		$(window).on('scroll',function (){
 			reserveFormChange();
 		});
-		function hoverWatch(){
-			$(window).off('.calHover').on('mousemove.calHover',function(){
-				if ( ((!$target.is(':empty') && $target.is(":visible")) || ($reserveForm.is(':hover')))){
-					if (!$reserveForm.is('.hover')){
-						$reserveForm.stop(true,true).addClass('hover');
-					}
-				}
-				else {
-					$reserveForm.removeClass('hover');
-				}
-			})
-		}
 	}
 	reserveForm();
 
